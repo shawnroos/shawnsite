@@ -1,13 +1,12 @@
 .catalogue {
   &-item {
-    border-bottom: 1px solid $grey-2;
     color: $default-color;
     display: block;
-    padding: 2rem 0;
+    padding: 10rem 0;
 
     &:hover .catalogue-line,
     &:focus .catalogue-line {
-      width: 5rem;
+      width: 0;
     }
 
     &:last-child {
@@ -15,9 +14,11 @@
     }
   }
 
-  &-time {
+  &-time { 
+    margin-bottom: -3rem;
+    font-size: large;
     color: $default-tint;
-    font-family: $serif-secondary;
+    font-family: $serif-primary;
     letter-spacing: .5px;
   }
 
@@ -25,15 +26,24 @@
     color: $default-shade;
     display: block;
     font-family: $sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 9vw;
+    line-height: 8vw;
+    letter-spacing: -0.4vw;
+    font-weight: 800;
     margin: .5rem 0;
+  }
+
+  & p {
+    margin-block-start: 5rem;
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 180%;
+    width: 75%;
+    max-width: 700px;
   }
 
   &-line {
     @include transition(all .3s ease-out);
-    border-top: .2rem solid $default-shade;
-    display: block;
-    width: 2rem;
+
   }
 }

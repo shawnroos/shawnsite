@@ -12,8 +12,9 @@ body {
 
 html {
   width: 100vw;
-  font-family: $serif-primary;
-  font-size: 14px;
+  font-family: $sans-serif-secondary;
+  font-size: 16px;
+  line-height: 1.75;
   overflow-y: scroll;
 
   @media (min-width: 600px) {
@@ -40,6 +41,16 @@ a {
   color: $blue;
   text-decoration: none;
 }
+
+
+p {
+  font-family: $sans-serif-secondary;
+  font-weight: 215;
+  font-size: 1.6rem;
+  line-height: 2.75rem;
+  letter-spacing: -1px;
+}
+
 
 blockquote {
   border-left: .25rem solid $grey-2;
