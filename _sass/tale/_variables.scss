@@ -17,10 +17,6 @@ $sans-serif: 'sen', Helvetica, Arial, sans-serif;
 $sans-serif-secondary: 'Inter', Helvetica, Arial, sans-serif;
 $monospaced: Menlo, Monaco, monospace;
 
-//Post Styling
-$post-bg-color: {{post.bg-color}};
-$post-bg-image: {{post.bg-image}}
-
 @mixin box-sizing($type: border-box) {
   -webkit-box-sizing: $type;
      -moz-box-sizing: $type;

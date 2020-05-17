@@ -1,23 +1,32 @@
----
-layout: default
----
+{% include head.html %}
+{% include navigation.html %}
 
 <div class="catalogue">
-  {% for post in paginator.posts %}
-  <container class="-container">
-    <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-item">
-      <div>
-        <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
-        <h1 class="catalogue-title">{{ post.title }}</h1>
-        <div class="catalogue-line"></div>
-
-        <p>
-          {{ post.content | strip_html | truncatewords: 100 }}jekyl
-        </p>
-
-      </div>
+{% for post in paginator.posts %}
+    <div class="catalogue-container" style="background-color:{{post.bg-color}};">
+    <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-meta">
+              <div class="catalogue-content-100">
+                  <h1 class="catalogue-title">{{ post.title }}</h1>
+              </div>
+              <div class="catalogue-content-100">
+                  <div class="catalogue-content-50">
+                    <p>
+                      {{ post.excerpt | truncatewords: 100 }}
+                    </p>
+                  </div>
+                  <div class="catalogue-content-50">
+                    {% if page.date %}
+                    <span class="catalogue-meta">{{page.date| date_to_long_string }}</span>  
+                    {% else %}
+                    {% endif %}
+                    {% if page.categories}
+                    <p>{{ page.categories | array_to_sentence_string  }} </p>
+                    {% else %}
+                    {% endif %}
+                  </div>
+              </div>    
     </a>
-  </container> 
+    </div>  
    {% endfor %}
 </div>
 
@@ -31,3 +40,6 @@ layout: default
 
   <span>{{ paginator.page }}</span>
 </div>
+
+
+{% include footer.html %}

@@ -5,7 +5,6 @@
 
 html,
 body {
-  color: $default-color;
   margin: 0;
   padding: 0;
 }
@@ -32,6 +31,10 @@ h3,
 h4,
 h5,
 h6 {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
   color: $default-shade;
   font-family: $sans-serif;
   line-height: normal;
@@ -45,11 +48,22 @@ a {
 
 p {
   font-family: $sans-serif-secondary;
+  display: block;
   font-weight: 215;
   font-size: 1.6rem;
   line-height: 2.75rem;
   letter-spacing: -1px;
 }
+
+p-large {
+  font-family: $sans-serif-secondary;
+  display: block;
+  font-weight: 215;
+  font-size: 3.2rem;
+  line-height: 3.75rem;
+  letter-spacing: -1px;
+}
+
 
 
 blockquote {
@@ -75,4 +89,11 @@ img {
 
 td {
   vertical-align: top;
+}
+
+a {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }

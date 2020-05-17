@@ -14,9 +14,9 @@ author:
   email:        shawn.roos@gmail.com
 
 # Build settings
-markdown:       kramdown
-include:
-  - _pages
+markdown: kramdown
+include: 
+- _pages
 
 # Assets
 sass:
