@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Introducing Tale"
-category: "one, two, five"
+topics: "one, two, five"
 bg-color: "#FDC0B9"
 bg-image: "assets/post-images/***"
 excerpt: "Etiam sodales nulla eget felis maximus, a porta eros finibus. Maecenas libero mi, aliquet sed metus sit amet, vestibulum vulputate ex. Phasellus blandit eget tellus et varius. Vivamus sit amet."

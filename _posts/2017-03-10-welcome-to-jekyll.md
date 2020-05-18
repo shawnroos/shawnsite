@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Welcome to Jekyll!"
+topics: "four, five"
 bg-color: "#FDC0B9"
 bg-image: "assets/post-images/***"
 ---

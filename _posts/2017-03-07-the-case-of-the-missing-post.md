@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Case of the Missing Post"
-category: "four, six, nine"
+topics: "four, six, nine"
 bg-color: "#006450"
 bg-image: "assets/post-images/***"
 excerpt: "Etiam sodales nulla eget felis maximus, a porta eros finibus. Maecenas libero mi, aliquet sed metus sit amet, vestibulum vulputate ex. Phasellus blandit eget tellus et varius. Vivamus sit amet."

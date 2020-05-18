@@ -15,12 +15,12 @@
                     </p>
                   </div>
                   <div class="catalogue-content-50">
-                    {% if page.date %}
-                    <span class="catalogue-meta">{{page.date| date_to_long_string }}</span>  
+                    {% if post.date %}
+                    <meta class="meta-date">{{post.date| date_to_long_string }}</meta>  
                     {% else %}
                     {% endif %}
-                    {% if page.categories}
-                    <p>{{ page.categories | array_to_sentence_string  }} </p>
+                    {% if post.topics %}
+                    <meta class="meta-topics">{{ post.topics}}</meta>
                     {% else %}
                     {% endif %}
                   </div>
