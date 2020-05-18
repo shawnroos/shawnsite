@@ -16,11 +16,11 @@
                   </div>
                   <div class="catalogue-content-50">
                     {% if post.date %}
-                    <meta class="meta-date">{{post.date| date_to_long_string }}</meta>  
+                    <div class="meta-date">{{post.date| date_to_long_string }}</div>  
                     {% else %}
                     {% endif %}
                     {% if post.topics %}
-                    <meta class="meta-topics">{{ post.topics}}</meta>
+                    <div class="meta-topics">{{ post.topics}}</div>
                     {% else %}
                     {% endif %}
                   </div>
