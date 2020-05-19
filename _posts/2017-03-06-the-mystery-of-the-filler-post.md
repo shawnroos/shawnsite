@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "The Mystery of the Filler Post"
-topics: "one, two 
+topics: "one, two"
+text-color: "dark" 
 bg-color: "#FDD756"
 bg-image: "assets/post-images/***"
 excerpt: "Etiam sodales nulla eget felis maximus, a porta eros finibus. Maecenas libero mi, aliquet sed metus sit amet, vestibulum vulputate ex. Phasellus blandit eget tellus et varius. Vivamus sit amet."

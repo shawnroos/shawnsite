@@ -2,6 +2,7 @@
 layout: post
 title:  "Introducing Tale"
 topics: "one, two, five"
+text-color: "light"
 bg-color: "#FDC0B9"
 bg-image: "assets/post-images/***"
 excerpt: "Etiam sodales nulla eget felis maximus, a porta eros finibus. Maecenas libero mi, aliquet sed metus sit amet, vestibulum vulputate ex. Phasellus blandit eget tellus et varius. Vivamus sit amet."
@@ -17,7 +18,7 @@ Tale is a minimal [Jekyll](https://jekyllrb.com/) theme curated for storytellers
 - Markdown and HTML text formatting
 - Pagination of posts
 
-Head over to the [Example Content]({{ site.baseurl }}/2017-03-16/example-content) post for a showcase of Tale's text formatting features.
+Head over to the [Example Content]({{site.baseurl}}/2017-03-16/example-content) post for a showcase of Tale's text formatting features.
 
 ## Browser Support
 Tale works on most if not all modern browsers, including Chrome, Safari and Firefox 👍🏼
