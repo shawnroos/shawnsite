@@ -48,7 +48,6 @@
 
   &-title {
     font-family: $sans-serif;
-    color: $default-shade;
     display: block;
     font-size: 9vw;
     line-height: 8vw;
@@ -58,15 +57,13 @@
   }
   
   &-title#light {
-    font-family: $sans-serif;
-    color: $default-dark;
-    filter: invert(1);    
+    color: $grey-2;
+    mix-blend-mode: hard-light; 
   }
-
-  &-title#dark {
-    font-family: $sans-serif;    
-    color: $default-dark;
+  
+  &-title#dark {    
     filter: invert(0);    
+    color: $default-dark;
   }
 
 
