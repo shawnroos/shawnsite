@@ -6,7 +6,9 @@
 html,
 body {
   margin: 0;
-  padding: 0;
+  padding: 2vw;
+  margin: auto; 
+  max-width: 1750px;
 }
 
 html {
@@ -31,18 +33,11 @@ h3,
 h4,
 h5,
 h6 {
-  margin-block-start: 1em;
-  margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   color: $default-shade;
   font-family: $sans-serif;
   line-height: normal;
-}
-
-a {
-  color: $blue;
-  text-decoration: none;
 }
 
 
@@ -66,7 +61,7 @@ p {
 
   &#light {
     color: $default-tint; 
-    mix-blend-mode: hard-light; 
+    mix-blend-mode: luminosity; 
   }
 
   &#dark {
@@ -103,8 +98,10 @@ td {
 }
 
 a {
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  display: inline;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+  color: $blue;
+  text-decoration: none;
+
 }

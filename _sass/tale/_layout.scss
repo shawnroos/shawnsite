@@ -1,87 +1,42 @@
-main,
-footer,
-.nav-container {
-  position: sticky;
-  max-width: 1600px;
-}
+.nav{
+  position: fixed;
+  width: 100vw;
+  top:0;
+  right: 0;
 
-.nav {
-  background-color:transparent; 
-  overflow: auto;
-  position: sticky;
-
-  &-container {
-    padding-left: 2vw;
-    padding-right: 2vw;
-    margin: 1rem auto;
-    position: relative;
-    text-align: center;
+  &-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  &-title {
-    @include transition(all .2s ease-out);
-    color: $default-color;
-    display: inline-block;
-    margin: 0;
-    padding-right: .2rem;
-
-    &:hover,
-    &:focus {
-      opacity: .6;
-    }
+  &-logo{
+    width:10vw;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 
-  ul {
-    list-style-type: none;
-    margin: 1rem 0 0;
-    padding: 0;
-    text-align: center;
-  }
-
-  li {
-    @include transition(all .2s ease-out);
-    color: $default-color;
-    display: inline-block;
-    opacity: .6;
-    padding: 0 2rem 0 0;
-
-    &:last-child {
-      padding-right: 0;
-    }
-
-    &:hover,
-    &:focus {
-      opacity: 1;
-    }
-  }
-
-  a {
-    color: $default-color;
-    font-family: $sans-serif;
+  &-list{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    transform: rotate(90deg);
+    background-color: #dbdbdb;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    align-items: center;
   }
 }
 
-@media (min-width: 600px) {
-  .nav {
-    &-container {
-      text-align: left;
+li#nav {
+      padding-right: 1.5vw;
+    
+    &:last-child{
+      padding-right: 0px;  
     }
-
-    ul {
-      bottom: 0;
-      position: absolute;
-      right: 0;
-    }
-  }
 }
 
-footer {
-  font-family: $serif-secondary;
-  padding: 2rem 0;
-  text-align: center;
-
-  span {
-    color: $default-color;
-    font-size: .8rem;
-  }
-}

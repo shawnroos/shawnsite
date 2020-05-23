@@ -9,12 +9,12 @@
           <h1 id="{{post.text-color}}" class="catalogue-title">{{ post.title }}</h1>
         </div>
         <div class="catalogue-content-100">
-          <div class="catalogue-content-50">
+          <div class="catalogue-content-70">
             <p class="p-large" id="{{post.text-color}}">
               {{ post.excerpt | truncatewords: 100 }}
             </p>
           </div>
-          <div class="catalogue-content-50">
+          <div class="catalogue-content-30">
             {% if post.date %}
             <div class="catalogue-time" id="{{post.text-color}}">{{post.date| date_to_long_string }}</div>  
             {% else %}
