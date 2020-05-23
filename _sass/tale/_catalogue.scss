@@ -1,9 +1,10 @@
 .catalogue {
+  overflow: hidden;
 
   &-container {
-    width: 100vw;
-    min-height: 80vh;
     flex: 1 100%;
+    width: 100vw;
+    min-height: 100vh;
     padding-top: 10vh;
     padding-bottom: 10vh;
   }
@@ -14,46 +15,80 @@
     flex-basis: 100%;
     margin: auto;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1600px;
   }
 
   &-content-50 {
     flex-basis: 50%;
     padding-top: 5vh;
     padding-bottom: 5vh;
-    padding-left: 1vw;
-    padding-right: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+
   }
 
+  &-topics {
+    display: block;
+    max-width:10vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    font-family: $sans-serif;
+    font-size: calc(14px + 0.3vw);
+    font-weight: 500;
+  }
+  
+  &-topics#light { 
+    filter: invert(0);    
+    color: $default-dark;
+    opacity: 0.6;
+  }
 
-  &-meta {
-    color: $default-color;
-    &:hover .catalogue-line,
-    &:focus .catalogue-line {
-      width: 0;
-    }
-
-    &:last-child {
-      border: 0;
-    }
+  &-topics#dark { 
+    color: $default-shade;
+    mix-blend-mode: hard-light;
   }
 
   &-time { 
-    margin-bottom: -3rem;
-    font-size: large;
-    color: $default-tint;
-    font-family: $serif-primary;
-    letter-spacing: .5px;
+    display: block;
+    padding-top: 0.75vh;
+    padding-bottom: 0.75vh;
+    font-family: $sans-serif-secondary;
+    font-size: calc(8px + 0.2vw);
+    text-transform: uppercase;
+    letter-spacing: 0.2vw;
+    font-weight: 450;
+    opacity: 0.5;
   }
+
+  &-time#light {
+    color: $grey-2;
+    mix-blend-mode: hard-light; 
+  }
+  
+  &-time#dark {    
+    filter: invert(0);    
+    color: $default-dark;
+  }
+
 
   &-title {
     font-family: $sans-serif;
     display: block;
-    font-size: 9vw;
-    line-height: 8vw;
-    letter-spacing: -0.4vw;
+    font-size: calc(64px + 4vw);
+    line-height: 100%;
+    letter-spacing: -0.3vw;
     font-weight: 800;
     margin: .5rem 0;
+    padding: 2vw;
+  }
+
+
+  &-image {
+    float: right;
+    width: 500px;
+    max-width: 20vw;
+    margin-right: 0vw;
+    margin-bottom: -10vw;
   }
   
   &-title#light {
@@ -65,7 +100,6 @@
     filter: invert(0);    
     color: $default-dark;
   }
-
 
   &-line {
     @include transition(all .3s ease-out);

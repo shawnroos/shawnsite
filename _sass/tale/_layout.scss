@@ -1,16 +1,18 @@
 main,
 footer,
 .nav-container {
-  display: block;
-  margin: 0 auto;
-  max-width: 1400px;
+  position: sticky;
+  max-width: 1600px;
 }
 
 .nav {
-  box-shadow: 0 2px 2px -2px $shadow-color;
+  background-color:transparent; 
   overflow: auto;
+  position: sticky;
 
   &-container {
+    padding-left: 2vw;
+    padding-right: 2vw;
     margin: 1rem auto;
     position: relative;
     text-align: center;

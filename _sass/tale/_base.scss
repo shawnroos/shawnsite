@@ -55,13 +55,24 @@ p {
   letter-spacing: -1px;
 }
 
-p-large {
+
+.p-large {
   font-family: $sans-serif-secondary;
   display: block;
   font-weight: 215;
-  font-size: 3.2rem;
-  line-height: 3.75rem;
-  letter-spacing: -1px;
+  font-size: calc(18px + 0.4vw);
+  line-height: 200%;
+  letter-spacing: -0.04vw;
+
+  &#light {
+    color: $default-tint; 
+    mix-blend-mode: hard-light; 
+  }
+
+  &#dark {
+    filter: invert(0);    
+    color: $default-dark;
+  }
 }
 
 

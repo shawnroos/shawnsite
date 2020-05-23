@@ -4,28 +4,28 @@
 <div class="catalogue">
 {% for post in paginator.posts %}
     <div class="catalogue-container" style="background-color:{{post.bg-color}};">
-    <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-meta">
-              <div class="catalogue-content-100">
-                  <h1 id="{{post.text-color}}" class="catalogue-title" >{{ post.title }}</h1>
-              </div>
-              <div class="catalogue-content-100">
-                  <div class="catalogue-content-50">
-                    <p>
-                      {{ post.excerpt | truncatewords: 100 }}
-                    </p>
-                  </div>
-                  <div class="catalogue-content-50">
-                    {% if post.date %}
-                    <div class="meta-date">{{post.date| date_to_long_string }}</div>  
-                    {% else %}
-                    {% endif %}
-                    {% if post.topics %}
-                    <div class="meta-topics">{{ post.topics}}</div>
-                    {% else %}
-                    {% endif %}
-                  </div>
-              </div>    
-    </a>
+      <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-meta">
+        <div class="catalogue-content-100">
+          <h1 id="{{post.text-color}}" class="catalogue-title">{{ post.title }}</h1>
+        </div>
+        <div class="catalogue-content-100">
+          <div class="catalogue-content-50">
+            <p class="p-large" id="{{post.text-color}}">
+              {{ post.excerpt | truncatewords: 100 }}
+            </p>
+          </div>
+          <div class="catalogue-content-50">
+            {% if post.date %}
+            <div class="catalogue-time" id="{{post.text-color}}">{{post.date| date_to_long_string }}</div>  
+            {% else %}
+            {% endif %}
+            {% if post.topics %}
+            <div class="catalogue-topics" id="{{post.text-color}}">{{post.topics}}</div>
+            {% else %}
+            {% endif %}
+          </div>
+        </div>    
+      </a>
     </div>  
    {% endfor %}
 </div>
