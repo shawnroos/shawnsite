@@ -1,4 +1,5 @@
 .nav {
+  display: flex;
 
   &-container{
     display: flex;
@@ -15,24 +16,35 @@
   }
 
   &-list{
-    position: absolute;
-    top: 0;
-    right: 0;
     display: flex;
     flex-direction: row;
-    transform: rotate(90deg);
-    background-color: #dbdbdb;
-    padding-left: 1.5vw;
-    padding-right: 1.5vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
     align-items: center;
   }
 }
 
 li#nav {
-      padding-right: 1.5vw;
+  font: $sans-serif;
+  font-size: calc(8px + 0.2vw);
+  font-weight:600;
+  text-transform: uppercase;  
+  letter-spacing: 0.13vw;
+  padding-right: 1.5vw;
     
     &:last-child{
+      font: $sans-serif;
+      font-size: calc(8px + 0.2vw);
+      font-weight:600;
+      text-transform: uppercase;  
+      letter-spacing: 0.15vw;
+      padding-right: 1.5vw;
       padding-right: 0px;  
+    }
+    
+    & , a {
+      color: $default-dark;
+    
     }
 }
 

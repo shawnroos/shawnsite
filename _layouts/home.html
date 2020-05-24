@@ -37,11 +37,6 @@
                   <h2 id="{{post.text-color}}" class="catalogue-title-mid">{{ post.title }}</h2>
                 </div>
                 <div class="catalogue-content-100-block">
-                  <div class="catalogue-content-70-block">
-                    <p class="p-regular" id="{{post.text-color}}">
-                      {{ post.excerpt | truncatewords: 100 }}
-                    </p>
-                  </div>
                 <div class="catalogue-content-30">
                 {% if post.date %}
                   <div class="catalogue-time" id="{{post.text-color}}">{{post.date| date_to_long_string }}</div>  
