@@ -1,42 +1,77 @@
 .catalogue {
-  overflow: hidden;
 
-  &-container {
-    flex: 1 100%;
-    margin-bottom: 6vw ;
-    padding-bottom: 3vw;
+  display: flex;
+  flex-wrap: nowrap;
+
+  &-container-100 {
+    width: 90vw;
+    margin: 1vw;
+    margin-left: -5vw;
+    padding-bottom: 5vh;
   }
 
-  &-container:first-child {
+  &-container-50 {
+    flex-flow: row wrap;
+    flex: 1 1 30%;
+    margin: 1vw;
+    margin-top: -10vh;
   }
-
 
   &-content-100 {
     display: flex;
-    flex-wrap: wrap;
-    flex-basis: 100%;
     margin: auto;
     padding-top: 6vw;
     padding-bottom: 0vw;
     padding-right: 6vw;
     padding-left: 6vw;
-    width: 100%;
+
+    &-block{
+      margin: auto;
+      padding-top: 4vw;
+      padding-bottom: 0vw;
+      padding-right: 4vw;
+      padding-left: 4vw;
+
+    }
+
+    &:last-child{
+      padding-bottom: 4vw;
+    }
   }
 
   &-content-70 {
     flex-basis: 70%;
     padding-bottom: 6vh;
-    padding-right: 4vw;
+    padding-right: 2vw;
+
+    &-block {
+      flex-basis: 100%;
+      padding-bottom: 2vh;
+    }
+  }
+
+  &-content-50 {
+    flex-flow: row nowrap;
+    flex-basis: 50%;
+    margin: auto;
+    padding-top: 6vw;
+    padding-bottom: 0vw;
+    padding-right: 4w;
+    padding-left: 4vw
   }
 
   &-content-30 {
     flex-basis: 30%;
     padding-bottom: 6vh;
+
+    &-block {
+      flex-basis: 100%;
+      padding-bottom: 6vh;
+    }
   }
 
   &-topics {
-    display: block;
-    max-width:10vw;
+    display: inline-block;
     padding-top: 1vh;
     padding-bottom: 1vh;
     font-family: $sans-serif;
@@ -67,24 +102,40 @@
     opacity: 0.5;
   }
 
-  &-time#light {
+  &-time#light, &-time-wide#light {
     color: $grey-2;
     mix-blend-mode: hard-light; 
   }
   
-  &-time#dark {    
+  &-time#dark, &-time-wide#dark {    
     filter: invert(0);    
     color: $default-dark;
   }
 
-
   &-title {
     font-family: $sans-serif;
     display: block;
-    font-size: calc(32px + 4vw);
+    font-size: calc(40px + 4vw);
     line-height: 110%;
     letter-spacing: -0.3vw;
     font-weight: 800;
+  }
+
+  &-title-mid {
+    font-size: calc(20px + 2vw);
+    line-height: 125%;
+    letter-spacing: -0.2vw;
+    font-weight: 700;
+  }
+
+  &-title#light,  &-title-mid#light {
+    color: $grey-2;
+    mix-blend-mode: hard-light; 
+  }
+  
+  &-title#dark, &-title-mid#dark {    
+    filter: invert(0);    
+    color: $default-dark;
   }
 
 
@@ -96,16 +147,6 @@
     margin-bottom: -10vw;
   }
   
-  &-title#light {
-    color: $grey-2;
-    mix-blend-mode: hard-light; 
-  }
-  
-  &-title#dark {    
-    filter: invert(0);    
-    color: $default-dark;
-  }
-
   &-line {
     @include transition(all .3s ease-out);
 
@@ -132,27 +173,43 @@
 
 @media only screen and (max-width: 1024px) {
 
+  html, body {
+    display: block;
+    width: 100vw;
+  }
+
+  .catalogue{
+    flex-flow: column nowrap;
+  }
+  
+  .catalogue-container-100, 
+  .catalogue-container-50 {
+    width: auto;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+
   .catalogue-content-100 {
     flex-flow: column;
-    flex-basis: 100%;
-    padding-top: 6vw;
-    padding-bottom: 3vw;
-    padding-right: 6vw;
-    padding-left: 6vw;
+    padding-top: 8vw;
+    padding-bottom: 2vw;
+    padding-right: 8vw;
+    padding-left: 8vw;
   }
 
   .catalogue-content-70 {
     flex-basis: 100%;
-    padding-top: 0px;
-    padding-bottom: 3vw;
-    padding-right: 0vw;
-    padding-left: 0px;
+    padding-top: 8px;
+    padding-bottom: 2vw;
+    padding-right: 8vw;
+    padding-left: 8px;
   }
 
   .catalogue-content-30 {
     flex-basis: 100%;
     padding-top: 0px;
-    padding-bottom: 3vw;
+    padding-bottom: 2vw;
     padding-right: 0px;
     padding-left: 0px;
   }
