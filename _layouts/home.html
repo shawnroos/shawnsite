@@ -2,57 +2,29 @@
 {% include navigation.html %}
 
 {% for post in site.posts limit:1 %}
-<body style="background-color:{{post.bg-color}};">
-      <div class="catalogue" style="background-color:{{post.bg-color}};">
-          <div class="catalogue-container-100" style="background-color:{{post.bg-color}};">
-            <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-meta">
-              <div class="catalogue-content-100">
-                <h1 id="{{post.text-color}}" class="catalogue-title">{{ post.title }}</h1>
-              </div>
-              <div class="catalogue-content-100">
-                <div class="catalogue-content-70">
-                  <p class="p-large" id="{{post.text-color}}">
-                    {{ post.excerpt | truncatewords: 100 }}
-                  </p>
-                </div>
-                <div class="catalogue-content-30">
-                  {% if post.date %}
-                  <div class="catalogue-time" id="{{post.text-color}}">{{post.date| date_to_long_string }}</div>  
-                  {% else %}
-                  {% endif %}
-                  {% if post.topics %}
-                  <div class="catalogue-topics" id="{{post.text-color}}">{{post.topics}}</div>
-                  {% else %}
-                  {% endif %}
-                </div>
-              </div>    
-            </a>
-          </div>  
-      </div>
-      <div class="catalogue">
-        {% for post in site.posts limit:3 offset:1 %}
-            <div class="catalogue-container-50" style="background-color:{{post.bg-color}};">
-              <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-meta">
-                <div class="catalogue-content-100-block">
-                  <h2 id="{{post.text-color}}" class="catalogue-title-mid">{{ post.title }}</h2>
-                </div>
-                <div class="catalogue-content-100-block">
-                <div class="catalogue-content-30">
-                {% if post.date %}
-                  <div class="catalogue-time" id="{{post.text-color}}">{{post.date| date_to_long_string }}</div>  
-                    {% else %}
-                    {% endif %}
-                    {% if post.topics %}
-                  <div class="catalogue-topics" id="{{post.text-color}}">{{post.topics}}</div>
-                    {% else %}
-                    {% endif %}
-                  </div>
-                </div>    
-              </a>
-            </div>  
-        {% endfor %}
-        </div>
-      </body>
+<body style="background-color:{{post.bg-color}};"> 
 {% endfor %}
 
-{% include footer.html %}
+  <div class="section-tall">
+    <div class="container">
+      <div class="container-column">
+        <div class="content-featured">
+          {% for post in site.posts limit:1 %}
+          <h1 class="title-mega"> {{post.title}} </h1>
+          <div class="container">
+            <p class="large">{{post.excerpt}}</p>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="container-column">
+        {% for post in site.posts limit:4 offset:1 %}
+        <div class="wrapper">
+          <h1 class="title-large"> {{ post.title }}</h1>
+          <p class="tiny">{{post.date}}</p>
+        </div>
+        {% endfor %}
+      </div> 
+      </div>
+    </div>
+</body>
