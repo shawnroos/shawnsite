@@ -1,6 +1,4 @@
 body{
-  max-width: 80vw;
-  margin: auto;
 }
 
 mark {
@@ -16,15 +14,15 @@ mark {
   &-mega{
     font-family: $sans-serif-secondary;
     font-weight: 800;
-    font-size: calc(32px + 2vw);
-    line-height: 120%;
+    font-size: calc(40px + 1.8vw);
+    line-height: 130%;
     letter-spacing: -0.2vw;  
   }
   
   &-large {
     font-family: $sans-serif-secondary;
-    font-weight: 800;
-    font-size: calc(16px + 1vw);
+    font-weight: 700;
+    font-size: calc(14px + 0.5vw);
     line-height: 120%;
     letter-spacing: -0.08vw; 
      margin-block-start: 3rem;
@@ -45,10 +43,10 @@ p {
   &.large{
     font-family: $sans-serif-secondary;
     font-weight: 330;
-    font-size: calc(16px + 0.5vw);
+    font-size: calc(12px + 0.5vw);
     line-height: 200%;
     letter-spacing: -0.05vw;
-    margin-block-start: 3rem;
+    margin-block-start: 3vmin;
   }
 
   &.tiny{
@@ -66,10 +64,11 @@ p {
 a {
   font-family: $sans-serif-secondary;
   font-weight: 800;
-  font-size: calc(8px + 0.25vw);
+  font-size: calc(8px + 0.05vmin);
+  color: $grey-2;
   line-height: 100%;
   text-transform: uppercase;
-  letter-spacing: 0.03vw;
+  letter-spacing: 0.5vmin;
   text-decoration: none;
 }
 
@@ -81,23 +80,4 @@ a {
 #light {
   color: $default-dark;
   mix-blend-mode: overlay;  
-  }
-
-li#nav {
-  display: block;
-  text-align: center;
-  margin: auto;
-  padding: 2vw 0 2vw 0;
-  
-      &.logo{
-      padding: 2vw 0 2vw 0;
-      width: auto;
-      height: auto;
-      }
-  }
-
-img{
-    width: 100%;
-    margin:auto;
-
   }

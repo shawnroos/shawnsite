@@ -1,57 +1,32 @@
 .section {
-  overflow: hidden;
   display: flex;
-  align-items: center;
-  margin: 0vmin 0 0vmin 0;
-
-   &-tall{
-     display: flex;
-     min-height: 100vh;
-    }
+  align-items: flex-start;
+  flex: 1 0 90vw;
+  margin: 3vmax 10vmax 3vmax 10vmax;
+  height: 100vh;
+  overflow: hidden;
+  
 }
 
 .container {
   display: flex;
-  flex-wrap: nowrap;
-  flex: 1 1 100%;
+  flex-wrap: wrap;
   align-items: flex-start;
-  padding: 0 0 0 6vmax;
+  flex: 1 1 auto;
 
   &-column {
     display: flex;
-    flex-direction: column;
     align-self: flex-start;
-    flex: 1 1 auto;
-    min-width: 30%;
-    max-width: 60%;
-    padding: 6vmin;
-
-    &-sticky{
-      position: -webkit-sticky; /* Safari */
-      position: sticky;
-      top: 0;
-      padding: 6vmin;
-    }
-
-    &.nav{
-      position: fixed;
-      top: 0;
-      min-width: 32px;
-      max-width: 5%;
-      height: 100vh;
-      padding: 1vmin;
-
-      &-list{
-      }
-
-    }
-
-  }   
+    flex-direction: column;
+  }
 }
 
-.content{ 
-  align-self: flex-start; 
-  max-width: 60%;
+.featured{ 
+  position: absolute;
+  display: inline-flex;
+  flex-flow: column;
+  flex-wrap: nowrap;
+  flex: 0 0 100%;
 }
 
 .wrapper{
@@ -59,25 +34,69 @@
   margin: 0vmin 6vmin 0vmin 6vmin;
   padding: 3vmin;
 
+  &-image{
+    margin-bottom: -15%;
+    }
+
   &-list{
     flex: 1 1 auto;
-    max-width: 100%;
     padding: 3vmin;
-  }
-   
-  &-image{
-    margin-bottom: -5%;
-    max-width: 50%;
   }
   
 }
 
-.span#logo {
-  font-family: $sans-serif-secondary;
-  font-weight: 800;
-  font-size: calc(8px + 0.25vw);
-  line-height: 100%;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-decoration: none;
+.nav{
+  position: fixed;
+  top: 0;
+  margin: auto;
+  height: 100vh;
+  max-width: 3%;
+  padding: 3vmin;
+  background-color: $default-dark;
+  
+  :first-child{
+    margin-top: 0vh;  
+  }
+
+  &-list{
+    margin-top: 5vh;;
+  }
+
+  & #bottom{
+    display: block;
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 3vmin;
+  }
 }
+
+li#nav {
+  display: inline block;
+  text-align: center;
+  margin: auto;
+  padding: 1.5vmin 0 1.5vmin 0;
+  }
+
+  
+  img{
+    height: 40vh;
+    width: auto;
+    margin:auto;
+
+    &.logo{
+      padding: 0vmin 0 0vmin 0;
+      width: 64px;
+      height: auto;
+      margin: 0 -2.5vmin 0 -2.5vmin;
+      border-radius: 999px;
+    }
+
+    &.icon{
+      margin: auto;
+      width: 32px;
+      height: auto;
+      background-color: $default-shade;
+      border-radius: 999px;
+    }
+
+  }
