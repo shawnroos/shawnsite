@@ -1,25 +1,36 @@
 {% include head.html %}
-{% include navigation.html %}
 
 {% for post in site.posts limit:1 %}
 <body style="background-color:{{post.bg-color}};"> 
 {% endfor %}
 
-  <div class="section-tall">
-    <div class="container">
-      <div class="container-column">
-        <div class="content-featured">
-          {% for post in site.posts limit:1 %}
-          <h1 class="title-mega"> {{post.title}} </h1>
-          <div class="container">
-            <p class="large">{{post.excerpt}}</p>
-            {% endfor %}
+<div class="section-tall">
+  <div class="container-column nav">
+  <ul class="nav-list">
+    <li id="nav"><a href="{{ '/' | prepend: site.baseurl }}"><img class="logo" src="assets/logo bw.png" alt="logo></li></a>
+    <li id="nav"><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
+    <li id="nav"><a href="{{ '/about' | prepend: site.baseurl }}">Contact</a></li>
+    <li id="nav"><a href="https://twitter.com/shawnroos">Twitter</a></li>
+    <li id="nav" ><a href="https://twitter.com/shawnroos">LinkedIn</a></li>
+    <li id="nav"><a href="{{ site.baseurl }}/">Posts</a></li>
+  </ul>
+  </div>    
+  {% for post in site.posts limit:1 %}
+  <div class="container">
+    <div class="container-column-sticky">
+      <div class="wrapper">
+        <div class="wrapper-image">
+          <img><img src="{{post.image}}" alt="Italian Trulli"></img>
           </div>
+          <h1 class="title-mega mark"><mark style="background-color:{{post.bg-color}};">{{post.title}}</mark></h1>
+          <p class="large">{{post.excerpt}}</p>
         </div>
       </div>
+    </div>
+    {% endfor %}
       <div class="container-column">
-        {% for post in site.posts limit:4 offset:1 %}
-        <div class="wrapper">
+        {% for post in site.posts limit:8 offset:1 %}
+        <div class="wrapper-list">
           <h1 class="title-large"> {{ post.title }}</h1>
           <p class="tiny">{{post.date}}</p>
         </div>

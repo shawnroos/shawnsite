@@ -1,18 +1,28 @@
-h1.title{
+body{
+}
 
-  &-mega {
+mark {
+  white-space:pre-wrap;
+  padding: 5px;
+  padding-left:0px;
+  margin-block-end: 1.25rem;
+  z-index: 999;
+}
+
+.title{
+  
+  &-mega{
     font-family: $sans-serif-secondary;
     font-weight: 800;
-    font-size: calc(40px + 3vw);
+    font-size: calc(32px + 2vw);
     line-height: 120%;
     letter-spacing: -0.2vw;  
-    margin-block-end: 1.25rem;
   }
-
+  
   &-large {
     font-family: $sans-serif-secondary;
     font-weight: 800;
-    font-size: calc(18px + 1vw);
+    font-size: calc(16px + 1vw);
     line-height: 120%;
     letter-spacing: -0.08vw; 
      margin-block-start: 3rem;
@@ -47,7 +57,7 @@ p {
     font-variant: small-caps;
     letter-spacing: 0.03vw;
     margin-block-start: 1rem;
-    margin-block-end: 3rem;
+    margin-block-end: 1rem;
   }
 }
 
@@ -72,6 +82,18 @@ a {
   }
 
 li#nav {
-  display: inline-flex;
-  padding-right: 1.25rem;
+  display: block;
+  margin: auto;
+  padding: 2vw 0 2vw 0;
+  
+      &.logo{
+      width: auto;
+      height: auto;
+      }
+  }
+
+img{
+    width: 100%;
+    margin:auto;
+
   }
