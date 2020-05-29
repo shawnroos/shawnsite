@@ -36,18 +36,22 @@
     &.nav{
       position: fixed;
       top: 0;
-      padding: 4vw 0;
-      min-width: 5%;
+      min-width: 32px;
       max-width: 5%;
       height: 100vh;
+      padding: 1vmin;
+
+      &-list{
+      }
+
     }
 
   }   
 }
 
 .content{ 
-  align-self: flex-start;
-  width: 70%; 
+  align-self: flex-start; 
+  max-width: 60%;
 }
 
 .wrapper{
@@ -62,7 +66,8 @@
   }
    
   &-image{
-    margin-bottom: -25%;
+    margin-bottom: -5%;
+    max-width: 50%;
   }
   
 }

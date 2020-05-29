@@ -7,12 +7,15 @@
 <div class="section-tall">
   <div class="container-column nav">
   <ul class="nav-list">
-    <li id="nav"><a href="{{ '/' | prepend: site.baseurl }}"><img class="logo" src="assets/logo bw.png" alt="logo></li></a>
+    <li id="nav"><a href="{{ '/' | prepend: site.baseurl }}"><img class="logo" src="assets/logo bw.png" alt="logo"></a></li>
+  </ul> 
+  <ul class="nav-list">
+    <li id="nav"><a href="{{ '/posts' | prepend: site.baseurl }}/">Posts</a></li>
+    <li id="nav"><a href="{{ '/posts' | prepend: site.baseurl }}/">Now</a></li>
     <li id="nav"><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
-    <li id="nav"><a href="{{ '/about' | prepend: site.baseurl }}">Contact</a></li>
     <li id="nav"><a href="https://twitter.com/shawnroos">Twitter</a></li>
     <li id="nav" ><a href="https://twitter.com/shawnroos">LinkedIn</a></li>
-    <li id="nav"><a href="{{ site.baseurl }}/">Posts</a></li>
+    <li id="nav"><a href="mailto:hey@shawnroos.com">Contact</a></li>
   </ul>
   </div>    
   {% for post in site.posts limit:1 %}

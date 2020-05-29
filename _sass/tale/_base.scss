@@ -1,4 +1,6 @@
 body{
+  max-width: 80vw;
+  margin: auto;
 }
 
 mark {
@@ -83,10 +85,12 @@ a {
 
 li#nav {
   display: block;
+  text-align: center;
   margin: auto;
   padding: 2vw 0 2vw 0;
   
       &.logo{
+      padding: 2vw 0 2vw 0;
       width: auto;
       height: auto;
       }
