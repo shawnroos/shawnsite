@@ -1,48 +1,40 @@
 .section {
   display: flex;
   align-items: flex-start;
-  flex: 1 0 90vw;
-  margin: 3vmax 10vmax 3vmax 10vmax;
   height: 100vh;
-  overflow: hidden;
-  
+  width: 97.5vw;
+  margin-left: 3vw;
 }
 
 .container {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  flex: 1 1 auto;
-
-  &-column {
-    display: flex;
-    align-self: flex-start;
-    flex-direction: column;
-  }
-}
-
-.featured{ 
-  position: absolute;
-  display: inline-flex;
-  flex-flow: column;
   flex-wrap: nowrap;
-  flex: 0 0 100%;
+  align-items: flex-start;
+  flex: 0 0 80vw;
+  margin: auto;
 }
+
+.column {
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: 0 3vw 0 3vw;
+}
+
+.featured{
+    flex: 1 1 70%;
+
+    &-image{
+      margin-bottom: -5vh;
+      max-width: 70%;
+      height: auto;
+    }
+  }
 
 .wrapper{
   flex: 1 1 auto;
-  margin: 0vmin 6vmin 0vmin 6vmin;
   padding: 3vmin;
-
-  &-image{
-    margin-bottom: -15%;
-    }
-
-  &-list{
-    flex: 1 1 auto;
-    padding: 3vmin;
-  }
-  
 }
 
 .nav{
@@ -50,12 +42,23 @@
   top: 0;
   margin: auto;
   height: 100vh;
-  max-width: 3%;
+  width: 2.5vw;
+  max-width: 64px;
+  min-width: 56px;
   padding: 3vmin;
   background-color: $default-dark;
   
   :first-child{
     margin-top: 0vh;  
+  }
+
+  & a {
+  font-weight: 800;
+  font-size: calc(8px + 0.05vmin);
+  color: $grey-2;
+  line-height: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.5vmin;
   }
 
   &-list{
@@ -67,6 +70,7 @@
     position: fixed;
     bottom: 0;
     padding-bottom: 3vmin;
+    margin-left: 1.5vmin;
   }
 }
 

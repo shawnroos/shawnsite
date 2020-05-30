@@ -4,46 +4,28 @@
 <body style="background-color:{{post.bg-color}};"> 
 {% endfor %}
 
-<div class="nav">
-  <ul class="nav-list">
-    <li id="nav"><a href="{{ '/' | prepend: site.baseurl }}"><img class="logo" src="assets/logo bw.png" alt="logo"></a></li>
-  </ul> 
-  <ul class="nav-list">
-    <li id="nav"><a href="{{ '/posts' | prepend: site.baseurl }}/">Posts</a></li>
-    <li id="nav"><a href="{{ '/now' | prepend: site.baseurl }}/">Work</a></li>
-    <li id="nav"><a href="{{ '/now' | prepend: site.baseurl }}/">Now</a></li>
-    <li id="nav"><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
-  </ul>
-  <ul clas="nav-list" id="bottom">
-    <li id="nav"><a href="https://twitter.com/shawnroos"><img class="icon" src="assets/twitter.svg" alt="twitter"></a></li>
-    <li id="nav" ><a href="https://www.linkedin.com/in/shawnroos"><img class="icon" src="assets/linkedin.svg" alt="linkedin"></a></li>
-    <li id="nav"><a href="mailto:hey@shawnroos.com"><img class="icon" src="assets/email.svg" alt="email"></a></li>
-  </ul>
-</div>    
+{% include navigation.html %}
 
+{% for post in site.posts limit:1 %}
 <div class="section">
-  {% for post in site.posts limit:1 %}
   <div class="container">
-    <div class="container-column">  
-      <div class="featured">
-        <div class="featured wrapper">
-          <div class="wrapper-image">
-            <img><img src="{{post.image}}" alt="image"></img>
-            </div>
-            <h1 class="title-mega mark"><mark style="background-color:{{post.bg-color}};">{{post.title}}</mark></h1>
-            <p class="large">{{post.excerpt}}</p>
-          </div>
-        </div>
-      </div>
+    <div class="column featured">
+      <div class="wrapper"><a href="{{page.url | prepend:'site.url'}}">
+        <img class="featured-image" src="{{post.image}}" alt="image"></img>
+        <h1 class="title-mega mark"><mark style="background-color:{{post.bg-color}};">{{post.title}}</mark></h1>
+        <p class="large">{{post.excerpt}}</p>
+      </div></a>
+      {% endfor %}
     </div>
-    {% endfor %}
-      <div class="container-column">
-        {% for post in site.posts limit:4 offset:1 %}
-        <div class="wrapper-list">
-          <h1 class="title-large"> {{ post.title }}</h1>
-          <p class="tiny">{{post.date}}</p>
-        </div>
-        {% endfor %}
-      </div> 
-      </div>
+    <div class="column">
+      {% for post in site.posts limit:4 offset:1 %}
+      <div class="wrapper"><a href="{{page.url | prepend:'site.url'}}">
+        <p class="tiny">{{site.time | date_to_string }}</p>
+        <h1 class="title-large"> {{ post.title }}</h1>
+          <p>{{post.excerpt | truncate: 24, ' →' }}</p>
+      </div></a>
+      {%endfor%}
+    </div>
+  </div>
+</div>
 </body>
