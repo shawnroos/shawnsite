@@ -1,7 +1,7 @@
 {% include head.html %}
 
 {% for post in site.posts limit:1 %}
-<body style="background-color:{{post.bg-color}};"> 
+<body style="background-color:{{post.bg-color}};">   
 {% endfor %}
 
 {% include navigation.html %}
@@ -12,7 +12,7 @@
     <div class="column featured">
       <div class="wrapper"><a href="{{page.url | prepend:'site.url'}}">
         <img class="featured-image" src="{{post.image}}" alt="image"></img>
-        <h1 class="title-mega mark"><mark style="background-color:{{post.bg-color}};">{{post.title}}</mark></h1>
+        <h1 class="title-mega mark" id="{{post.text-color}}"><mark style="background-color:{{post.bg-color}};">{{post.title}}</mark></h1>
         <p class="large">{{post.excerpt}}</p>
       </div></a>
       {% endfor %}

@@ -1,17 +1,18 @@
 .section {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
+  width: 90vw;
+  margin: auto auto auto 10vw;
   height: 100vh;
-  width: 97.5vw;
-  margin-left: 3vw;
 }
 
 .container {
+  margin: auto;
   display: flex;
   flex-wrap: nowrap;
   align-items: flex-start;
-  flex: 0 0 80vw;
-  margin: auto;
+  align-items: stretch;
+  flex: 0 1 95%;
 }
 
 .column {
@@ -33,74 +34,46 @@
   }
 
 .wrapper{
-  flex: 1 1 auto;
+  flex: 1 1;
   padding: 3vmin;
 }
+
+ul.wrapper{
+  flex: 1 1;
+  padding: 6vmin 1vmin 6vmin 1vmin;
+}
+
+li.icon{
+position: relative;  
+text-align: center;
+padding: 1vmin 0 1vmin 0;
+}
+
+
 
 .nav{
-  position: fixed;
-  top: 0;
-  margin: auto;
-  height: 100vh;
-  width: 2.5vw;
-  max-width: 64px;
-  min-width: 56px;
-  padding: 3vmin;
-  background-color: $default-dark;
   
-  :first-child{
-    margin-top: 0vh;  
-  }
-
-  & a {
-  font-weight: 800;
-  font-size: calc(8px + 0.05vmin);
-  color: $grey-2;
-  line-height: 100%;
-  text-transform: uppercase;
-  letter-spacing: 0.5vmin;
-  }
-
-  &-list{
-    margin-top: 5vh;;
-  }
-
-  & #bottom{
-    display: block;
+    &-section {
     position: fixed;
-    bottom: 0;
-    padding-bottom: 3vmin;
-    margin-left: 1.5vmin;
-  }
+    top: 0;
+    left: 0;  
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 6vw;
+    background-color: rgba(82, 81, 51, 0.082) ;
+    }
+
+    &, .li{
+      text-align: center;
+      font-family: $sans-serif-secondary;
+      color: $default-shade;
+      font-weight: 800;
+      font-size: calc(8px + 0.2vw);
+      text-transform: uppercase;
+      letter-spacing: 0.03vw;
+      text-decoration: none;
+      padding: 1vmin 0 1vmin 0;
+    }
 }
-
-li#nav {
-  display: inline block;
-  text-align: center;
-  margin: auto;
-  padding: 1.5vmin 0 1.5vmin 0;
-  }
-
   
-  img{
-    height: 40vh;
-    width: auto;
-    margin:auto;
-
-    &.logo{
-      padding: 0vmin 0 0vmin 0;
-      width: 64px;
-      height: auto;
-      margin: 0 -2.5vmin 0 -2.5vmin;
-      border-radius: 999px;
-    }
-
-    &.icon{
-      margin: auto;
-      width: 32px;
-      height: auto;
-      background-color: $default-shade;
-      border-radius: 999px;
-    }
-
-  }

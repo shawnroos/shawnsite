@@ -1,4 +1,8 @@
-body{
+
+body{}
+
+* {
+  box-sizing: border-box;
 }
 
 mark {
@@ -15,7 +19,7 @@ mark {
   &-mega{
     font-family: $sans-serif-secondary;
     font-weight: 800;
-    color: $default-dark;
+    color: '${{post.text-color}}';
     font-size: calc(32px + 1.8vw);
     line-height: 130%;
     letter-spacing: -0.2vw;  
@@ -56,7 +60,6 @@ p {
     line-height: 200%;
     letter-spacing: -0.05vw;
     text-decoration: none;
-
   }
 
   &.tiny{
@@ -77,6 +80,22 @@ a {
   text-decoration: none;
 }
 
+img{
+  width: auto;
+
+  &.icon{
+    width: 4vw;
+    height: auto;
+    margin: auto;
+
+   &-small {
+    width: 1.5vw;
+    margin: auto;
+    height: auto;
+    }
+  }
+}
+
 #dark {
   color: $default-dark;
   opacity: 10;
@@ -84,5 +103,5 @@ a {
 
 #light {
   color: $default-dark;
-  mix-blend-mode: overlay;  
+  background-blend-mode: overlay;  
   }
