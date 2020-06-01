@@ -10,7 +10,7 @@ google_analytics: UA—XXXXXXXX-X
 # Author
 author:
   name:         Shawn Roos
-  url:          https://shawnroos.com
+  url:          http://127.0.0.1:4000/shawnroos/
   email:        shawn.roos@gmail.com
 
 # Build settings

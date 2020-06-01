@@ -1,9 +1,4 @@
 {% include head.html %}
-
-{% for post in site.posts limit:1 %}
-<body style="background-color:{{post.bg-color}};">   
-{% endfor %}
-
 {% include navigation.html %}
 
 {% for post in site.posts limit:1 %}
@@ -12,15 +7,15 @@
     <div class="column featured">
       <div class="wrapper"><a href="{{page.url | prepend:'site.url'}}">
         <img class="featured-image" src="{{post.image}}" alt="image"></img>
-        <h1 class="title-mega mark" id="{{post.text-color}}"><mark style="background-color:{{post.bg-color}};">{{post.title}}</mark></h1>
+        <h1 class="title-mega mark" id="{{post.text-color}}"><mark>{{post.title}}</mark></h1>
         <p class="large">{{post.excerpt}}</p>
       </div></a>
       {% endfor %}
     </div>
-    <div class="column">
+    <div class="column-list">
       {% for post in site.posts limit:4 offset:1 %}
-      <div class="wrapper"><a href="{{page.url | prepend:'site.url'}}">
-        <p class="tiny">{{site.time | date_to_string }}</p>
+      <div class="wrapper-list"><a href="{{page.url | prepend:'site.url'}}">
+        <div class="timestamp">{{site.time | date_to_string }}</div>
         <h1 class="title-large"> {{ post.title }}</h1>
           <p>{{post.excerpt | truncate: 36, ' →' }}</p>
       </div></a>
