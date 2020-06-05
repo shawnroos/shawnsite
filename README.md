@@ -39,7 +39,6 @@ $ bundle
 
 ```yaml
 theme:      tale
-
 permalink:  /:year-:month-:day/:title
 paginate:   5
 ```
