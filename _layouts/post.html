@@ -7,13 +7,16 @@ layout: default
     <img class="hero-image" src="{{site.baseurl}}/{{page.image}}" style="background-color: {{page.bg-color}} ;" alt="image"></img>
     <h1 class="title-mega"><mark>{{ page.title }}</mark></h1>
   </div>
+</div>  
+<div class="post">
   {{ content }}
         <div class="post-info">
             {% if page.date %}
             <div class="timestamp">{{site.time | date_to_string }}</div>
             {% endif %}
         </div>
-</div>
+  </div>    
+
 
 {% if page.comments %}
   {% include disqus_comments.html %}
