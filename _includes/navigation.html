@@ -1,6 +1,6 @@
 <div class="nav-section">
   <div class="nav-container">
-  <a href="{{ '/' | prepend: site.baseurl }}" class="logo"><img src="assets/logo.svg" class="logo" alt="logo"></a>
+  <a href="{{ '/' | prepend: site.baseurl }}" class="logo"><img src="{{ '/assets/logo.svg' | prepend: site.baseurl }}" class="logo" alt="logo"></a>
     <ul class="wrapper" id="mid-align">
       <li class="nav"><a href="{{ '/posts' | prepend: site.baseurl }}/" class="light">Posts</a></li>
       <li class="nav"><a href="{{ '/now' | prepend: site.baseurl }}/" class="light">Work</a></li>
@@ -8,8 +8,9 @@
       <li class="nav"><a href="{{ '/about' | prepend: site.baseurl }}" class="light">About</a></li>
     </ul>
     <ul class="wrapper" id="bottom-align">
-      <li class="icon"><a href="https://twitter.com/shawnroos"><img class="icon-small" src="assets/twitter.svg" alt="twitter"></a></li>
-      <li class="icon"><a href="https://www.linkedin.com/in/shawnroos"><img class="icon-small" src="assets/linkedin.svg" alt="linkedin"></a></li>
-      <li class="icon"><a href="mailto:hey@shawnroos.com"><img class="icon-small" src="assets/email.svg" alt="email"></a></li>
+      <li class="icon"><a href="https://twitter.com/shawnroos"><img class="icon-small" src="{{'/assets/twitter.svg' | prepend: site.baseurl }}" alt="twitter"></a></li>
+      <li class="icon"><a href="https://www.linkedin.com/in/shawnroos"><img class="icon-small" src="{{'/assets/linkedin.svg' | prepend: site.baseurl }}" alt="linkedin"></a></li>
+      <li class="icon"><a href="mailto:hey@shawnroos.com"><img class="icon-small" src="{{'/assets/email.svg' | prepend: site.baseurl }}" alt="email"></a></li>
     </ul>
+</div>
 </div>

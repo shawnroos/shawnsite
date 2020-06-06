@@ -1,53 +1,58 @@
 .post {
-  margin: auto;
-  padding: 3vw;
+  padding: 5vw;
+  background-color: $white;
   width: 50vw;
-  max-width: 750px;
-
+  
+  
   &-info {
     color: $default-tint;
     font-family: $serif-primary;
     letter-spacing: 0.5px;
     text-align: left;
-
+    
     span {
       font-style: italic;
     }
   }
-
-  &-title {
-    color: $default-shade;
-    display: block;
-    font-family: $sans-serif;
-    font-size: 9vw;
-    line-height: 8vw;
-    letter-spacing: -0.4vw;
-    font-weight: 800;
-    margin: .5rem 0;
-  }
-
+  
   &-line {
     border-top: 0.4rem solid $default-shade;
     display: block;
     margin: 0 auto 3rem;
     width: 4rem;
   }
-
+  
   p {
-    margin-block-start: 5rem;
-    font-weight: 300;
-    font-size: calc(18 + 1.3vw);
-    line-height: 180%;
-    max-width: 800px;
+    margin-block-start: 2vh;
+    margin-block-end: 4vh; 
+    font-weight: 400;
+    letter-spacing: -0.03rem;
+    font-size: calc(16px + 0.3vw);
+    line-height: 190%;
   }
-
+  
   a:hover {
     text-decoration: underline;
   }
-
-  img {
-    margin: 0 auto 0.5rem;
+  
+  .hero {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    
+    & .title-mega{
+      font-size: calc(32px + 3vw );
+      margin-top: -15vh;
+    }
+    
+    &-image {
+      width: 50vw;
+      margin-top: -5vw;
+      margin-right: -5vw;
+      margin-left: -5vw;
+    }
   }
+
 
   img + em {
     color: $default-tint;

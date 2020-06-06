@@ -3,15 +3,16 @@ layout: default
 ---
 
 <div class="post">
-  
-  <h1 class="title-mega">{{ page.title }}</h1>
-  <div class="post-info">
-      {% if page.date %}
-      <div class="timestamp">{{site.time | date_to_string }}</div>
-      {% endif %}
-      
+  <div class="hero">
+    <img class="hero-image" src="{{site.baseurl}}/{{page.image}}" style="background-color: {{page.bg-color}} ;" alt="image"></img>
+    <h1 class="title-mega"><mark>{{ page.title }}</mark></h1>
   </div>
   {{ content }}
+        <div class="post-info">
+            {% if page.date %}
+            <div class="timestamp">{{site.time | date_to_string }}</div>
+            {% endif %}
+        </div>
 </div>
 
 {% if page.comments %}

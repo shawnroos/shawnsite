@@ -1,8 +1,13 @@
 
-body{}
+body{
+}
 
 * {
   box-sizing: border-box;
+}
+
+main{
+  display: block;
 }
 
 mark {
@@ -39,6 +44,39 @@ mark {
     } 
   }
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $sans-serif-secondary; 
+  color: '${{post.text-color}}';
+}
+
+h1 { 
+  margin-block-start: 8vh;
+  margin-block-end: 8vh;
+  font-weight: 800;
+  font-size: calc(24px + 1.8vw);
+  line-height: 130%;
+  letter-spacing: -0.2vw;
+}  
+
+h2 { 
+  margin-block-start: 8vh;
+  font-weight: 700;
+  font-size: calc(16px + 1.8vw);
+  line-height: 130%;
+  letter-spacing: -0.05rem;
+}  
+
+h3 { 
+  margin-block-start: 8vh;
+  font-weight: 530;
+  font-size: calc(14px + 1.2vw);
+  line-height: 130%;
+  letter-spacing: -0.05rem;
+}  
+
+
+
 
 p {
   font-family: $sans-serif-secondary;
@@ -126,6 +164,21 @@ img{
   &.logo{
     width: 6vw;
   }
+}
+
+.timestamp{
+  margin-block-start: 2vh;
+  display: inline-block;
+  padding: 4px 6px 4px 6px;
+  font-family: $serif-secondary;
+  color: white;
+  font-weight: 530;
+  background-color: #000;
+  font-size: calc(8px + 0.1vw);
+  text-transform: uppercase;
+  letter-spacing: 0.2vw;
+  text-decoration: none;
+  margin-bottom: 1vw;
 }
 
 #dark {
