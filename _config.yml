@@ -1,8 +1,8 @@
 # Site settings
 title:          Shawn Roos
 description:    "Product Person Based in Cape Town South Africa "
-baseurl:        "127.0.0.1:4000/shawnroos/"
-url:            "https://shawnroos.com"
+baseurl:        ""
+url:            "jeylhttps://shawnroos.com"
 
 # Google Analytics
 google_analytics: UA—XXXXXXXX-X

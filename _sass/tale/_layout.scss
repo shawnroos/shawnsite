@@ -16,6 +16,7 @@
   align-items: flex-start;
   align-items: stretch;
   flex: 0 1 auto;
+  max-width: 1400px;
 }
 
 .column {
@@ -23,18 +24,19 @@
   overflow-y: visible;
   align-self: flex-start;
   flex-direction: column;
-  flex: 0 1 30%;
-  padding: 0 5vw 0 5vw;
-}
-
-.featured {
-    flex: 0 1 60%;
-
+  padding: 5vw;
+  
+  &.featured {
+    flex: 0 1 100%;
+    
     &-image{
-      max-width: 100%;
+      flex: 0 1 60%;
+      margin-bottom: -5vh;
+      max-width: 60%;
       height: auto;
     }
   }
+}
 
 .wrapper-list{
   flex: 1 1;
@@ -42,8 +44,6 @@
 }
 
 li.wrapper-list{
-  
-
 }
 
 ul.wrapper{

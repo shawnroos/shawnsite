@@ -2,28 +2,39 @@
 {% include navigation.html %}
 
 <body>
-{% for post in site.posts limit:1 %}
 <div class="section">
+{% for post in site.posts limit:1 %}
+{% if post.image =="none" %}
   <div class="container">
     <div class="column featured">
-      <div class="wrapper"><a href="/shawnroos{{ post.url }}">
+      <div class="wrapper"><a href="{{ post.url }}">
+        <h1 class="title-mega title-only">{{post.title}}</h1>
+        <p class="large">{{post.excerpt}}</p>
+      </div></a>
+    </div>
+  </div>
+    {% else %}
+  <div class="container">
+    <div class="column featured">
+      <div class="wrapper"><a href="{{ post.url }}">
         <img class="featured-image" src="{{post.image}}" alt="image"></img>
         <h1 class="title-mega mark" id="{{post.text-color}}"><mark>{{post.title}}</mark></h1>
         <p class="large">{{post.excerpt}}</p>
       </div></a>
-      {% endfor %}
     </div>
-    <ul class="column-list">
-      {% for post in site.posts limit:4 offset:1 %}
-      <a href="/shawnroos{{ post.url }}">
-        <li class="wrapper-list">
-          <div class="timestamp">{{site.time | date_to_string }}</div>
-          <h1 class="title-large"> {{ post.title }}</h1>
-          <p>{{post.excerpt | truncate: 56, ' →' }}</p>
+  </div> 
+{% endif %}
+{% endfor %}
+  <ul class="column-list">
+{% for post in site.posts limit:4 offset:1 %}
+    <a href="{{ post.url }}">
+      <li class="wrapper-list">
+        <div class="timestamp">{{site.time | date_to_string }}</div>
+        <h1 class="title-large"> {{ post.title }}</h1>
+        <p>{{post.excerpt | truncate: 56, ' →' }}</p>
       </li>
     </a>
-      {%endfor%}
-    </ul>
-  </div>
+    {%endfor%}
+  </ul>
 </div>
 </body>

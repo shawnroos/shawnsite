@@ -3,11 +3,18 @@ layout: default
 ---
 
 <div class="post">
+  {% if page.image !="none" %}
   <div class="hero">
-    <img class="hero-image" src="{{site.baseurl}}/{{page.image}}" style="background-color: {{page.bg-color}} ;" alt="image"></img>
+    <img class="hero-image" src="/{{ page.image }}" style="background-color: {{page.bg-color}} ;" alt="image"></img>
     <h1 class="title-mega"><mark>{{ page.title }}</mark></h1>
   </div>
+  {% else %}
+  <div class="hero-headline-only">
+    <h1 class="title-mega">{{ page.title }}</h1>
+  </div>
+  {% endif %}
 </div>  
+
 <div class="post">
   {{ content }}
         <div class="post-info">
