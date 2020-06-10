@@ -18,6 +18,11 @@
   max-width: 1600px;
   margin: auto;
   min-height: 80vh;
+
+  &-post{
+    width: 50vw;
+    margin: auto;
+  }
 }
 
 .column--{
@@ -55,7 +60,7 @@
     background-size: 100%;
     background-repeat: no-repeat;
     background-position-x: 0; 
-    min-height: 30vh;
+    min-height: 40vh;
 
     &.title-only{  
       min-height: 80vh;

@@ -23,7 +23,7 @@
           <div class="wrapper--featured-post" style="background-color:{{post.bg-color}};">
             <div class="wrapper--featured-content">
               <h1 class="title-mega is-{{post.text-color}}">{{post.title}}</h1>
-              <p class="large is-{{post.text-color}}">{{post.excerpt}}</p>
+              <p class="large is-{{post.text-color}}">{{post.excerpt | truncate: 128, ' →'}}</p>
             </div>
           </div>
         </a>
@@ -37,7 +37,7 @@
         <a href="{{ post.url }}">
           <li class="wrapper--list-item">
             <h1 class="title-large"> {{ post.title }}</h1>
-            <p>{{post.excerpt | truncate: 72, ' →' }}</p>
+            <p>{{post.excerpt | truncate: 80, '…' }}</p>
           </li>
         </a>
         {%endfor%}
