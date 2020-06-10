@@ -4,9 +4,9 @@ topics: "one, two, three"
 excerpt: "Etiam sodales nulla eget felis maximus, a porta eros finibus. Maecenas libero mi, aliquet sed metus sit amet, vestibulum vulputate ex. Phasellus blandit eget tellus et varius. Vivamus sit amet."
 
 layout: post
-text-color: "light"
+text-color: "dark"
 image: "none"
-bg-color: "#006450"
+bg-color: "#FFF6DF"
 bg-image: "assets/post-images/***"
 ---
 
