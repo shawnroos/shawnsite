@@ -6,29 +6,34 @@
     <div class="container">
       {% for post in site.posts limit:1 %} {% if post.image =="none" %}
       <div class="column--60-sticky">
-        <div class="wrapper--featured-post title-only" style="background-color:{{post.bg-color}};" >
+        <div class="wrapper--featured-post title-only" style="background-color:{{post.bg-color}};">
           <div class="wrapper--featured-content title-only">
             <h1 class="title-mega" style="color:{{post.text-color}};">{{post.title}}</h1>
             <p class="large">{{post.excerpt}}</p>
+          </div>
         </div>
-      </div>
-      </a>
+        </a>
       </div>
       {% else %}
       <div class="column--60-sticky">
         <a href="{{ post.url }}">
-        <div class="wrapper--featured-post" style="background-color:{{post.bg-color}}; background-image:url('{{post.image}}');">
+          <div class="wrapper--featured-post"
+            style="background-color:{{post.bg-color}}; background-image:url('{{post.image}}');">
           </div>
           <div class="wrapper--featured-post" style="background-color:{{post.bg-color}};">
             <div class="wrapper--featured-content">
               <h1 class="title-mega is-{{post.text-color}}">{{post.title}}</h1>
               <p class="large is-{{post.text-color}}">{{post.excerpt}}</p>
             </div>
-        </div></a>
+          </div>
+        </a>
       </div>
       {% endif %}{% endfor %}
       <ul class="column--40">
-        {% for post in site.posts limit:3 offset:1 %}
+        <div class="wrapper--header">
+          <h6 class="small-header"> LATEST POSTS </h6>
+        </div>
+        {% for post in paginator.posts limit:4 offset:1 %}
         <a href="{{ post.url }}">
           <li class="wrapper--list-item">
             <h1 class="title-large"> {{ post.title }}</h1>
@@ -36,6 +41,24 @@
           </li>
         </a>
         {%endfor%}
+        <div class="pagination">
+          <h6 class="small-header"> MORE POSTS </h6>
+          {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path }}" class="previous">
+            Previous
+          </a>
+          {% else %}
+          <span class="previous">Previous</span>
+          {% endif %}
+          <span class="page_number ">
+            Page: {{ paginator.page }} of {{ paginator.total_pages }}
+          </span>
+          {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+          {% else %}
+          <span class="next ">Next</span>
+          {% endif %}
+        </div>
       </ul>
     </div>
   </div>
