@@ -5,60 +5,69 @@
   <div class="section">
     <div class="container">
       {% for post in site.posts limit:1 %} {% if post.image =="none" %}
-      <div class="column--60-sticky">
+      <div class="column--60">
+        <div class="sticky">
         <div class="wrapper--featured-post title-only" style="background-color:{{post.bg-color}};">
-          <div class="wrapper--featured-content title-only">
-            <h1 class="title-mega" style="color:{{post.text-color}};">{{post.title}}</h1>
-            <p class="large">{{post.excerpt}}</p>
-          </div>
+           <h1 class="title-mega title-only" style="color:{{post.text-color}};">{{post.title}}</h1>
+           <p class="large">{{post.excerpt}}</p>
         </div>
+      </div>
         </a>
       </div>
       {% else %}
-      <div class="column--60-sticky">
+      <div class="column--60">
+        <div class="sticky">
         <a href="{{ post.url }}">
-          <div class="wrapper--featured-post"
-            style="background-color:{{post.bg-color}}; background-image:url('{{post.image}}');">
+          <div class="wrapper--featured-post image" style="background-color:{{ post.bg-color }};">
+          <img src="{{post.image}}" alt="image" ></img>
           </div>
-          <div class="wrapper--featured-post" style="background-color:{{post.bg-color}};">
-            <div class="wrapper--featured-content">
+          <div class="wrapper--featured-post content" style="background-color:{{post.bg-color}};">
               <h1 class="title-mega is-{{post.text-color}}">{{post.title}}</h1>
-              <p class="large is-{{post.text-color}}">{{post.excerpt | truncate: 128, ' →'}}</p>
-            </div>
-          </div>
+              <p class="large is-{{post.text-color}}">{{post.excerpt | truncatewords: 50, ' →'}}</p>
+          </div>  
         </a>
+      </div>
       </div>
       {% endif %}{% endfor %}
       <ul class="column--40">
         <div class="wrapper--header">
-          <h6 class="small-header"> LATEST POSTS </h6>
+          <h6 class="small-header is-light"> LATEST POSTS </h6>
         </div>
-        {% for post in paginator.posts limit:4 offset:1 %}
+        {% for post in paginator.posts %}
         <a href="{{ post.url }}">
           <li class="wrapper--list-item">
             <h1 class="title-large"> {{ post.title }}</h1>
-            <p>{{post.excerpt | truncate: 80, '…' }}</p>
+            <p>{{post.excerpt | truncatewords: 30, '…' }}</p>
           </li>
         </a>
-        {%endfor%}
+        {% endfor %}
+
+        {% if paginator.total_pages > 1 %}
         <div class="pagination">
-          <h6 class="small-header"> MORE POSTS </h6>
           {% if paginator.previous_page %}
-          <a href="{{ paginator.previous_page_path }}" class="previous">
-            Previous
-          </a>
+          <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
           {% else %}
-          <span class="previous">Previous</span>
+          <span>&laquo; Prev</span>
           {% endif %}
-          <span class="page_number ">
-            Page: {{ paginator.page }} of {{ paginator.total_pages }}
+          {% for page in (1..paginator.total_pages) %}
+          {% if page == paginator.page %}
+          <span><em>{{ page }}</em>
+            {% elsif page == 1 %}
+            <a href="{{ paginator.previous_page_path | relative_url }}">{{ page }}</a>
+            {% else %}
+            <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+            {% endif %}
+            {% endfor %}
           </span>
           {% if paginator.next_page %}
-          <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+          <a href="{{ paginator.next_page_path | relative_url }}">Next</a>
           {% else %}
-          <span class="next ">Next</span>
+          <span>Next</span>
           {% endif %}
         </div>
+        {% endif %}
+
+
       </ul>
     </div>
   </div>

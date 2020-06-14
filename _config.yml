@@ -31,7 +31,7 @@ plugins:
   - jekyll-seo-tag
 
 # Permalinks
-permalink:      /:year-:month-:day/:title
+permalink:      /:year/:title
 paginate:       10
 
 # Excludes

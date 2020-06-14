@@ -1,77 +1,103 @@
 .section {
   display: flex;
-  overflow-y: visible;
   align-items: stretch;
   width: 90vmax;
   margin: auto 10vmin auto 10vmin ;
   padding: 10vmin 0 10vmin 0;
-  min-height: 80vh;
 
 }
 
 .container {
   display: flex;
   flex-wrap: nowrap;
-  overflow-y: visible;
   align-content: flex-start;
   width: 90vw;
-  max-width: 1600px;
+  max-width: 2000px;
   margin: auto;
-  min-height: 80vh;
-
-  &-post{
-    width: 50vw;
-    margin: auto;
-  }
 }
 
 .column--{
   
   &60 {
-    display: inline-flex;
     flex: 6 4 60vmin;
-    align-self: start;
-    padding: 0 8vmin 0 8vmin;
+    padding: 0 10vmin 0 10vmin;
     align-items: stretch;
-
-    &-sticky{
-      position: sticky;
-      display: inline-flex;
-      top: 10vmin;
-      flex: 6 4 60vmin;
-      padding: 0 8vmin 0 8vmin;
-      align-items: stretch;
-    }
   }
 
   &40{
     flex: 4 6 40vmin;
-    padding: 0 8vmin 0 8vmin;
+    padding: 0 10vmin 0 10vmin;
     align-items: stretch;
   }
 }
- 
+
+.sticky{
+  position: sticky;
+  display: block;
+  top: 10vh;
+}
+
 .wrapper--{
 
   &featured-post{
-    display: flex;;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     overflow: hidden;
-    padding: 5vmin;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position-x: 0; 
-    min-height: 40vh;
+    min-height: 30vh;
+
+    &.content{
+      flex-direction: column;
+      align-self: flex-end;
+      padding:  2.5vmin 5vmin 5vmin 5vmin;
+    }
+
+    &.image{ 
+      padding: 5vmin 25vmin 0vmin 5vmin;
+
+      &:before{
+        content:'Latest';
+        margin: -5vmin 0 0 -5vmin;
+        padding: 1.2vmin;
+        width: calc(100% + 40vmin);
+        background-color: $default-dark;
+        
+        font-family: $sans-serif;
+        color: white;
+        letter-spacing: 0.4vmin;  
+        text-transform: uppercase;
+        font-weight: 530;
+        font-size: 8px;
+
+      }
+    }
 
     &.title-only{  
       min-height: 80vh;
+      justify-content: space-evenly;
+
+      &:before{
+        content:'Latest';
+        width: 100%;
+        margin: -10vmin -5vmin -5vmin -5vmin;
+        width: calc(100% + 10vmin);
+        background-color: $default-dark;
+        
+        font-family: $sans-serif;
+        color: white;
+        padding: 1.2vmin;
+        letter-spacing: 0.4vmin;  
+        text-transform: uppercase;
+        font-weight: 530;
+        font-size: 8px;
+      }
+    }
+    
+    &:last-child{
+      border-bottom: solid 0.5vmin $default-dark;
     }
   }
   
-  &featured-content{
-    flex-direction: column;
-    align-self: flex-end;
-    min-height: 20vh;
-  }
 
   &list-item{
     margin-bottom: 6vmin;
@@ -79,9 +105,9 @@
 
   &header{
    margin-block-start: auto;
-   padding-bottom: 2vmin;
    margin-block-end: 4vmin;
-   border-bottom: solid 1px $grey-2;
+   padding: 1.2vmin;
+   background-color: #1f1d1d;
   }
 }
 
@@ -120,15 +146,4 @@
       letter-spacing: 0.15vw;
       text-decoration: none;
     }
-}
-
-.pagination--{
-
-  &compact {
-    align-self: flex-end;
-    margin-block-start: auto;
-    padding-top: 2vmin;
-    border-top: solid 1px $grey-2;
-  }
-
 }

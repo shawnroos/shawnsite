@@ -57,9 +57,13 @@ h6 {
   &.small-header{
     font-family: $sans-serif;
     letter-spacing: 0.4vmin;  
-    text-transform: capitalize;
+    text-transform: uppercase;
     font-weight: 530;
     font-size: 8px;
+
+    &.is-light {
+      color: $white;    
+      }  
   }
 }  
 
@@ -72,7 +76,7 @@ h6 {
     font-size: calc(24px + 4vmin);
     line-height: 110%;
     letter-spacing: -0.2vmin;
-    margin-block-start: 2vmin;
+    margin-block-start: 3vmin;
     margin-block-end: 3vmin;
     
     &.is-dark {
@@ -90,7 +94,7 @@ h6 {
     font-family: $sans-serif;
     color: $default-dark;
     font-weight: 800;
-    font-size: calc(32px + 12vmin);
+    font-size: calc(24px + 8vmin);
     line-height: 100%;
     letter-spacing: -0.2vw;
     margin-block-start: 2vmin;
@@ -184,20 +188,15 @@ a.logo{
 li.icon{  
   text-align: center;
   padding: 1vmin 0 1vmin 0;
-  }
+}
   
   
 img{
   width: auto;
   max-width: 100%;
-  margin-block-start: 5vh;
-  
-  &, .hero-image{
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-block-start: 0vh;
-    margin-block-end: 1.5vmin;
+  margin-block-start: 5vmin;
+
+  &.hero-image{
   }
 
   &.icon{
