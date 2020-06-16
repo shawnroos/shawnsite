@@ -1,47 +1,51 @@
 {% include head.html %}
-{% include navigation.html %}
+{% for post in site.posts limit:1 %}
 
+{% include navigation.html %}
 <body>
+  <div class="hero section" style="background-color:{{post.bg-color}};">
+    <div class="hero container--">
+      <div class="hero column--50">
+        <div class="wrapper--hero">
+          <h1 class="title-mega"> {{post.title}}</h1>
+          <p class="large">{{post.excerpt | truncatewords: 20, '…' }}</p>
+        </div>
+      </div>
+      <img class="hero" src="{{ post.image }}"></img>
+    </div>
+  </div>
+  {% endfor %}
   <div class="section">
-    <div class="container">
-      {% for post in site.posts limit:1 %} {% if post.image =="none" %}
-      <div class="column--60">
-        <div class="sticky">
-        <div class="wrapper--featured-post title-only" style="background-color:{{post.bg-color}};">
-           <h1 class="title-mega title-only" style="color:{{post.text-color}};">{{post.title}}</h1>
-           <p class="large">{{post.excerpt}}</p>
-        </div>
-      </div>
-        </a>
-      </div>
-      {% else %}
-      <div class="column--60">
-        <div class="sticky">
-        <a href="{{ post.url }}">
-          <div class="wrapper--featured-post image" style="background-color:{{ post.bg-color }};">
-          <img src="{{post.image}}" alt="image" ></img>
-          </div>
-          <div class="wrapper--featured-post content" style="background-color:{{post.bg-color}};">
-              <h1 class="title-mega is-{{post.text-color}}">{{post.title}}</h1>
-              <p class="large is-{{post.text-color}}">{{post.excerpt | truncatewords: 50, ' →'}}</p>
-          </div>  
-        </a>
-      </div>
-      </div>
-      {% endif %}{% endfor %}
-      <ul class="column--40">
+    <div class="container--">
+      <div class="column--50">
         <div class="wrapper--header">
-          <h6 class="small-header is-light"> LATEST POSTS </h6>
+          <h6 class="small-header is-dark"> Hey, I'm Shawn </h6>
         </div>
-        {% for post in paginator.posts %}
+        <div class="wrapper--">
+          <h1 class="title-large"> Donec neque erat, consequat vitae vestibulum at, dapibus eu nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</h1>
+        </div>
+      </div>
+      <ul class="column--50">
+        <div class="wrapper--header">
+          <h6 class="small-header is-dark"> LATEST POSTS </h6>
+        </div>
+        {% for post in paginator.posts limit:8 %}
         <a href="{{ post.url }}">
           <li class="wrapper--list-item">
-            <h1 class="title-large"> {{ post.title }}</h1>
-            <p>{{post.excerpt | truncatewords: 30, '…' }}</p>
+            <h1 class="title-medium"> {{ post.title }}</h1>
+            <p>{{post.excerpt | truncatewords: 20, '…' }}
+              {% for topics in post.topics %}
+              <span class="topics">
+                ⎮ {{ post.topics }}
+                {% endfor %}
+              </span>
+              <span class="timestamp">
+                ⎮ {{ post.date | date_to_long_string }}
+              </span>
+            </p>
           </li>
         </a>
         {% endfor %}
-
         {% if paginator.total_pages > 1 %}
         <div class="pagination">
           {% if paginator.previous_page %}
@@ -66,8 +70,6 @@
           {% endif %}
         </div>
         {% endif %}
-
-
       </ul>
     </div>
   </div>

@@ -1,5 +1,5 @@
 
-body{
+body{  
 }
 
 * {
@@ -51,21 +51,7 @@ h3 {
   line-height: 130%;
   letter-spacing: -0.05rem;
 }  
-
-
-h6 {   
-  &.small-header{
-    font-family: $sans-serif;
-    letter-spacing: 0.4vmin;  
-    text-transform: uppercase;
-    font-weight: 530;
-    font-size: 8px;
-
-    &.is-light {
-      color: $white;    
-      }  
-  }
-}  
+ 
 
 .title{
   color: $default-dark;
@@ -73,11 +59,11 @@ h6 {
   &-mega{
     font-family: $sans-serif;
     font-weight: 800;
-    font-size: calc(24px + 4vmin);
-    line-height: 110%;
+    font-size: calc(32px + 4vmin);
+    line-height: 130%;
     letter-spacing: -0.2vmin;
-    margin-block-start: 3vmin;
-    margin-block-end: 3vmin;
+    margin-block-start: 0vmin;
+    margin-block-end: 0vmin;
     
     &.is-dark {
       color: $default-dark;
@@ -87,37 +73,15 @@ h6 {
     &.is-light {
       color: $white;    
       }   
-
-  }
-
-  &-mega.title-only {
-    font-family: $sans-serif;
-    color: $default-dark;
-    font-weight: 800;
-    font-size: calc(24px + 8vmin);
-    line-height: 100%;
-    letter-spacing: -0.2vw;
-    margin-block-start: 2vmin;
-    margin-block-end: 3vmin;  
-
-    &.is-dark {
-      color: $default-dark;
-      opacity: 10;
-      }
-    
-    &.is-light {
-      color: $grey-2;
-      mix-blend-mode: hard-light;  
-      }
   }
   
   &-large {
     font-family: $sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     color: $default-dark;
-    font-size: calc(10px + 1.5vmin);
-    line-height: 120%;
-    letter-spacing: -0.1vmin;
+    font-size: calc(24px + 1vmin);
+    line-height: 160%;
+    letter-spacing: -0.15vmin;
     margin-block-start: 0vh;
     margin-block-end: 0vh;   
     
@@ -125,13 +89,24 @@ h6 {
       margin-block-start: 0rem;
     } 
   }
+
+  &-medium {
+    font-family: $sans-serif;
+    font-weight: 600;
+    color: $default-dark;
+    font-size: calc(12px + 1.5vmin);
+    line-height: 140%;
+    letter-spacing  : -0.15vmin;
+    margin-block-start: 0vh;
+    margin-block-end: 0vh;
+  }
 }
 
 p {
   font-family: $sans-serif-secondary;
-  font-weight: 330;
+  font-weight: 500;
   color: $default-color;
-  font-size: calc( 14px + 0.05vmin);
+  font-size: calc( 18px + 0.05vmin);
   line-height: 200%;  
   text-decoration: none;
   margin-block-start: 1rem;
@@ -142,7 +117,7 @@ p {
     font-family: $sans-serif-secondary;
     font-weight: 330;
     color: $default-shade;
-    font-size: calc(10px + 0.8vmin);
+    font-size: calc(12px + 0.8vmin);
     line-height: 200%;
     margin-block-start: 1rem;
     margin-block-end: 0.5rem;
@@ -172,75 +147,71 @@ p {
 }
 
 
-
-a {
-  font-family: $sans-serif-secondary;
-  text-decoration: none;
-
-  &.light{
-    color: white;
-  }
+span {
+  margin-left: 0.5vmin;
+  margin-right: 0.5vmin;
 }
 
-a.logo{
+
+a {
+  display: inline-flex;
+  align-items: center; 
+  text-decoration: none;
+
+  &.text{
+  font-family: $sans-serif-secondary;
+  }
+
+  &.logo{
+    display: inline-block;
+    height: 2.5vw;
+    width: 2.5vw;
+    background-image: url("/assets/logo.png");
+    background-size: 2vw;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
 li.icon{  
   text-align: center;
-  padding: 1vmin 0 1vmin 0;
 }
   
   
 img{
-  width: auto;
-  max-width: 100%;
-  margin-block-start: 5vmin;
-
-  &.hero-image{
-  }
-
+  
   &.icon{
-    width: 4vw;
+    max-width: 2vw;
     height: auto;
-    margin: auto;
-
-   &-small {
-    width: 2vw;
-    margin: auto;
+    
+    &-small {
+    width: 2.5vw;
+    padding: 0 0 0 2vmin;
     height: auto;
     border-radius: 999px;
     }
   }
 
   &.logo{  
-    padding: 0 2vmin 0 2vmin;
-    width: 100%;
-    margin: auto;
-    height: auto;
+    width: 5vmin;
+    height: 5vmin;
+    display: inline-flex;
+    align-items: center;
+    background-color: $default-dark;
+    border-radius: 999px;
   }
 }
 
-.timestamp{
-  margin-block-start: 2vh;
-  display: inline-block;
-  padding: 4px 6px 4px 6px;
-  font-family: $serif-secondary;
-  color: white;
-  font-weight: 530;
-  background-color: #000;
-  font-size: calc(8px + 0.1vw);
-  text-transform: uppercase;
-  letter-spacing: 0.2vw;
-  text-decoration: none;
-  margin-bottom: 1vw;
+.timestamp, .topics {
+  color:$grey-1;
 }
 
 .is-dark {
   color: $default-dark;
   opacity: 10;
-  }
+}
 
 .is-light {
   color: $default-dark;
   background-blend-mode: overlay;  
-  }
+}
