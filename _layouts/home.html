@@ -3,19 +3,20 @@
 
 {% include navigation.html %}
 <body>
-  <div class="hero section" style="background-color:{{post.bg-color}};">
+  <div class="hero section--" style="background-color:{{post.bg-color}};">
     <div class="hero container--">
       <div class="hero column--50">
         <div class="wrapper--hero">
           <h1 class="title-mega"> {{post.title}}</h1>
           <p class="large">{{post.excerpt | truncatewords: 20, '…' }}</p>
+          <a href="{{post.url}}" class="button--hero" style="color:{{post.bg-color}};">Read On</a>
         </div>
       </div>
       <img class="hero" src="{{ post.image }}"></img>
     </div>
   </div>
   {% endfor %}
-  <div class="section">
+  <div class="section--">
     <div class="container--">
       <div class="column--50">
         <div class="wrapper--header">
@@ -32,7 +33,7 @@
         {% for post in paginator.posts limit:8 %}
         <a href="{{ post.url }}">
           <li class="wrapper--list-item">
-            <h1 class="title-medium"> {{ post.title }}</h1>
+            <h1 class="title-large"> {{ post.title }}</h1>
             <p>{{post.excerpt | truncatewords: 20, '…' }}
               {% for topics in post.topics %}
               <span class="topics">
