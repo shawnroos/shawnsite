@@ -30,7 +30,7 @@
         <div class="wrapper header">
           <h3 class="title small-title is-dark"> LATEST POSTS </h3>
         </div>
-        {% for post in paginator.posts limit:8 %}
+        {% for post in paginator.posts limit:4 %}
         <a href="{{ post.url }}">
           <li class="wrapper list-item">
             <h3 class="title large-title"> {{ post.title }}</h1>
