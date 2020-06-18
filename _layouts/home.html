@@ -1,39 +1,39 @@
 {% include head.html %}
 {% for post in site.posts limit:1 %}
-
 {% include navigation.html %}
+
 <body>
-  <div class="hero section--" style="background-color:{{post.bg-color}};">
-    <div class="hero container--">
-      <div class="hero column--50">
-        <div class="wrapper--hero">
-          <h1 class="title-mega"> {{post.title}}</h1>
+  <div class="hero section " style="background-color:{{post.bg-color}};">
+    <div class="hero container">
+      <div class="hero col60">
+        <div class="wrapper-hero">
+          <h2 class="title mega-title"> {{post.title}}</h2>
           <p class="large">{{post.excerpt | truncatewords: 20, '…' }}</p>
-          <a href="{{post.url}}" class="button--hero" style="color:{{post.bg-color}};">Read On</a>
+          <a href="{{post.url}}" class="button large-button" style="color:{{post.bg-color}};">Read On</a>
         </div>
       </div>
       <img class="hero" src="{{ post.image }}"></img>
     </div>
   </div>
   {% endfor %}
-  <div class="section--">
-    <div class="container--">
-      <div class="column--50">
-        <div class="wrapper--header">
-          <h6 class="small-header is-dark"> Hey, I'm Shawn </h6>
+  <div class="section">
+    <div class="container">
+      <div class="col50">
+        <div class="wrapper header">
+          <h3 class="title small-title is-dark"> Hey, I'm Shawn </h3>
         </div>
-        <div class="wrapper--">
-          <h1 class="title-large"> Donec neque erat, consequat vitae vestibulum at, dapibus eu nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</h1>
+        <div class="wrapper">
+          <p class="huge"> Donec neque erat, consequat vitae vestibulum at, dapibus eu nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
         </div>
       </div>
-      <ul class="column--50">
-        <div class="wrapper--header">
-          <h6 class="small-header is-dark"> LATEST POSTS </h6>
+      <ul class="col50">
+        <div class="wrapper header">
+          <h3 class="title small-title is-dark"> LATEST POSTS </h3>
         </div>
         {% for post in paginator.posts limit:8 %}
         <a href="{{ post.url }}">
-          <li class="wrapper--list-item">
-            <h1 class="title-large"> {{ post.title }}</h1>
+          <li class="wrapper list-item">
+            <h3 class="title large-title"> {{ post.title }}</h1>
             <p>{{post.excerpt | truncatewords: 20, '…' }}
               {% for topics in post.topics %}
               <span class="topics">

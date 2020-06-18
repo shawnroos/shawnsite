@@ -5,9 +5,9 @@ excerpt: "Etiam sodales nulla eget felis maximus, a porta eros finibus. Maecenas
 
 layout: post
 text-color: "light"
-image: "none"
-bg-color: "#DDEEEB"
-bg-image: "assets/post-images/***"
+image: "https://shawnroos.com/assets/images/image01.png?v55888394546851"
+bg-color: "#83a9d7"
+bg-image: ""
 ---
 
 Donec neque erat, consequat vitae vestibulum at, dapibus eu nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra.
