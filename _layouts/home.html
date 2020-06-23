@@ -1,31 +1,77 @@
----
-layout: default
----
+{% include head.html %}
+{% for post in site.posts limit:1 %}
+{% include navigation.html %}
 
-<div class="catalogue">
-  {% for post in paginator.posts %}
-    <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-item">
-      <div>
-        <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
-        <h1 class="catalogue-title">{{ post.title }}</h1>
-        <div class="catalogue-line"></div>
-
-        <p>
-          {{ post.content | strip_html | truncatewords: 30 }}
-        </p>
-
+<body>
+  <div class="hero section " style="background-color:{{post.bg-color}};">
+    <div class="hero container">
+      <div class="hero col60">
+        <div class="wrapper-hero">
+          <h2 class="title mega-title"> {{post.title}}</h2>
+          <p class="large">{{post.excerpt | truncatewords: 20, '…' }}</p>
+          <a href="{{post.url}}" class="button large-button" style="color:{{post.bg-color}};">Read On</a>
+        </div>
       </div>
-    </a>
+      <img class="hero" src="{{ post.image }}"></img>
+    </div>
+  </div>
   {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
-  {% endif %}
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
-  {% endif %}
-
-  <span>{{ paginator.page }}</span>
-</div>
+  <div class="section">
+    <div class="container">
+      <div class="col50">
+        <div class="wrapper header">
+          <h3 class="title small-title is-dark"> Hey, I'm Shawn </h3>
+        </div>
+        <div class="wrapper">
+          <p class="huge"> Donec neque erat, consequat vitae vestibulum at, dapibus eu nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
+        </div>
+      </div>
+      <ul class="col50">
+        <div class="wrapper header">
+          <h3 class="title small-title is-dark"> LATEST POSTS </h3>
+        </div>
+        {% for post in paginator.posts limit:4 %}
+        <a href="{{ post.url }}">
+          <li class="wrapper list-item">
+            <h3 class="title large-title"> {{ post.title }}</h1>
+            <p>{{post.excerpt | truncatewords: 20, '…' }}
+              {% for topics in post.topics %}
+              <span class="topics">
+                ⎮ {{ post.topics }}
+                {% endfor %}
+              </span>
+              <span class="timestamp">
+                ⎮ {{ post.date | date_to_long_string }}
+              </span>
+            </p>
+          </li>
+        </a>
+        {% endfor %}
+        {% if paginator.total_pages > 1 %}
+        <div class="pagination">
+          {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
+          {% else %}
+          <span>&laquo; Prev</span>
+          {% endif %}
+          {% for page in (1..paginator.total_pages) %}
+          {% if page == paginator.page %}
+          <span><em>{{ page }}</em>
+            {% elsif page == 1 %}
+            <a href="{{ paginator.previous_page_path | relative_url }}">{{ page }}</a>
+            {% else %}
+            <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+            {% endif %}
+            {% endfor %}
+          </span>
+          {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path | relative_url }}">Next</a>
+          {% else %}
+          <span>Next</span>
+          {% endif %}
+        </div>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</body>

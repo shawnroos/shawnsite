@@ -1,11 +1,21 @@
-<nav class="nav">
-  <div class="nav-container">
-    <a href="{{ site.baseurl }}/">
-      <h2 class="nav-title">{{ site.title }}</h2>
-    </a>
-    <ul>
-      <li><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
-      <li><a href="{{ site.baseurl }}/">Posts</a></li>
+<div class="nav section" style="background-color:{{post.bg-color}}{{page.bg-color}};">
+  <div class="nav container">
+    <ul class="nav logo">
+      <a href="{{ '/' | prepend: site.baseurl }}" class="logo" style="background-color:{{post.bg-color}}{{page.bg-color}};"></a>
+          <ul class="nav links">
+            <li class="nav"><a href="{{ '/posts' | prepend: site.baseurl }}/">Posts</a></li>
+            <li class="nav"><a href="{{ '/now' | prepend: site.baseurl }}/">Work</a></li>
+            <li class="nav"><a href="{{ '/now' | prepend: site.baseurl }}/">Now</a></li>
+            <li class="nav"><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
+          </ul>
+    </ul>
+    <ul class="nav social">
+      <li class="icon"><a href="https://twitter.com/shawnroos"><img class="icon-small"
+            src="{{'/assets/twitter.svg' | prepend: site.baseurl }}" alt="twitter"></a></li>
+      <li class="icon"><a href="https://www.linkedin.com/in/shawnroos"><img class="icon-small"
+            src="{{'/assets/linkedin.svg' | prepend: site.baseurl }}" alt="linkedin"></a></li>
+      <li class="icon"><a href="mailto:hey@shawnroos.com"><img class="icon-small"
+            src="{{'/assets/email.svg' | prepend: site.baseurl }}" alt="email"></a></li>
     </ul>
   </div>
-</nav>
+</div>  

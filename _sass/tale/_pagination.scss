@@ -1,13 +1,17 @@
 .pagination {
-  border-top: .5px solid $grey-2;
-  font-family: $serif-secondary;
-  padding-top: 2rem;
-  position: relative;
-  text-align: center;
+  display: flex;
+  padding-top: 1vmin;
+  border-top: solid 1px $grey-2;
+  font-family: $sans-serif;
+  letter-spacing: 0.4vmin;  
+  text-transform: uppercase;
+  font-weight: 530;
+  font-size: 8px;
 
   span {
+    flex: 4 1 ;
     color: $default-shade;
-    font-size: 1.1rem;
+    font-size: 8px;
   }
 
   .top {
