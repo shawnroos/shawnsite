@@ -2,8 +2,8 @@
 layout: default
 ---
 
-<div class="hero section " style="background-color:{{page.bg-color}};">
-  <div class="hero container">
+<div class="post hero section " style="background-color:{{page.bg-color}};">
+  <div class="post hero container">
     <div class="hero col60">
       <div class="wrapper-hero">
         <h2 class="title mega-title"> {{page.title}}</h2>
@@ -13,13 +13,22 @@ layout: default
     <img class="hero" src="{{ page.image }}"></img>
   </div>
 </div>  
-
-{{ content }}
+<div class="post section">
+  <div class="post container">
+    <div class="post col50">
+      {{ content }}
+    </div>
+    <ul class="col50">
+      <div class="wrapper header">
+        <h3 class="title small-title is-dark"> More </h3>
+      </div>
+    </ul>
+  </div>
+</div> 
 
 {% if page.comments %}
   {% include disqus_comments.html %}
 {% endif %}
-
 <div class="pagination">
   {% if page.next.url %}
     <a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
@@ -27,6 +36,5 @@ layout: default
   {% if page.previous.url %}
     <a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
   {% endif %}
-
   <a href="#" class="top">Top</a>
 </div>
