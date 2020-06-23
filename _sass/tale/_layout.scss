@@ -1,13 +1,13 @@
 .section, {
   display:flex;
-  width:100vw;
+  width:100%;
   margin-top:10vh;
 }
 
 .container{
   display: flex;
   flex-wrap: nowrap;
-  flex: 1 1 100vw;
+  flex: 1 1 100%;
   align-items: flex-start;
   max-width: 2000px;  
   margin: 0 auto;
@@ -32,7 +32,6 @@
     flex-direction: column;
     flex: 6 4 60vw;
     max-width: 60vw;
-    align-items: stretch;
     margin: 0 10vmin 0 10vmin;
   }
 
@@ -156,7 +155,7 @@
     align-self: flex-start;
   }
   
-  &.col60 {
+  &.col50 {
     position: relative;
     display: inline-flex;
     max-width: 40vw;
