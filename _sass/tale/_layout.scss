@@ -97,9 +97,10 @@
 
     & > a.logo{
       display: inline-block;
-      height: 3vw;
+      box-sizing: border-box;
       width: 3vw;
-      margin-right: 1vmin;
+      height: 3vw;
+      margin-right: 1.2vmin;
       background-image: url("/assets/logo.png");
       background-size: 1.5vw;
       background-position: center;
@@ -117,7 +118,7 @@
     color: $default-dark;
     font-family: $sans-serif-secondary;
     text-align: center;
-    font-size: calc(6px + 0.25vw);
+    font-size: calc(10px + 0.25vmin);
     text-transform: uppercase;
     letter-spacing: 0.15vw;
     text-decoration: none;
@@ -157,11 +158,12 @@
   
   &.col50 {
     position: relative;
+    z-index: 999;
     display: inline-flex;
-    max-width: 40vw;
+    max-width: 35vw;
 
     & > .wrapper-hero{
-    padding: 0 5vmin 5vmin 0;
+      padding: 0 0 10vh 0;
     
       &, > .title.mega-title{
         font-weight: 900;
@@ -186,7 +188,7 @@
   & > img.hero{
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: -10vmin;
     height: 50vh;
   }   
 }

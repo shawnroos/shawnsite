@@ -1,10 +1,13 @@
 
 body{  
+background-image: $white-gradient;
 }
 
 * {
   box-sizing: border-box;
 }
+
+
 
 main{
   display: block;
@@ -200,14 +203,14 @@ a {
 a.button{
   position: relative;
   display: inline-block;
+  box-sizing: border-box;
 
   &.large-button {
     margin: 2.5vh 0 2.5vh 0;
-    padding: 0.6vmin 1.2vmin;
     min-width: 20%;
     text-align: center;
     background-color: $default-dark;
-    border: none;
+    border: solid 0.25vmin $default-dark;
     border-radius: 8px;
     font-family: $sans-serif;
     font-weight: 700;
@@ -215,13 +218,11 @@ a.button{
     font-size: calc(8px + 0.5vmin);
 
       &:hover{
-      background-size: 4rem;
-      text-align: start;
-      background-repeat: no-repeat;
-      background-position-y: 1rem;
-      padding: 1rem 1.25rem;
+        border: solid 0.25vmin $default-dark;
+        background-color:$default-dark;
+        transform: scale(1.05);
       }
-    }
+  }
 }   
 
 li{  
@@ -236,19 +237,11 @@ img{
   &.icon-small {
     position: relative;
     width: 2vw;
+    min-width: 32px;
     height: auto;
     border-radius: 999px;
   }
   
-
-  &.logo{  
-    width: 5vmin;
-    height: 5vmin;
-    display: inline-flex;
-    align-items: center;
-    background-color: $default-dark;
-    border-radius: 999px;
-  }
 }
 
 .timestamp, .topics {

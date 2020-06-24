@@ -1,4 +1,33 @@
-@media screen and (max-width: 960px){ 
+@media screen and (min-width: 1301px){
+    .hero{
+       
+        &.col50 {
+            min-height: 60vh;
+            max-width: 50%;
+            padding: 0;
+        }
+
+        &, > .title.mega-title{
+            font-size: calc(24px + 6vw);
+            letter-spacing: -0.3vmin;
+        }
+
+        &, > p.large{
+            font-size: calc(14px + 0.5vmin);
+        }
+        
+        & > img.hero{
+            position: absolute;
+            bottom: 0;
+            right: -10vmin;
+            width: 80vmin;
+            height: auto;
+        }   
+    }  
+
+}
+
+@media screen and (max-width: 1300px){
 
     [class*="section"] {
         display:flex; 
@@ -6,7 +35,74 @@
 
     [class*="container"] {
         position: relative;
-        display: flex;
+        display: flex; 
+        flex: 1 1 50%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 4vmin 8vmin;
+        margin: 0vmin;
+    }   
+    
+    [class*="col"] {
+        display:flex;
+        flex-direction: column;
+        flex:1 1 100vmin;
+        max-width: 100%;
+        flex-wrap: wrap;
+        margin:0vmin;
+        margin-block-end: 5vh;
+    }   
+
+    [class*="wrapper"] {
+        max-width: 100%;
+    }
+
+    .nav{
+
+        &.container{
+            padding: 5vh 8vmin;
+        }
+
+    }
+
+
+    .hero{
+       
+        &.col50 {
+            min-height: 60vh;
+            max-width: 100%;
+            padding: 0px;
+        }
+
+        &, > .title.mega-title{
+            font-size: calc(24px + 1.5vmin);
+            letter-spacing: -0.3vmin;
+        }
+
+        &, > p.large{
+            font-size: calc(14px + 0.5vmin);
+        }
+        
+        & > img.hero{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 35vh;
+        }   
+    }  
+
+}
+
+
+
+@media screen and (max-width: 960px){ 
+
+    [class*="section"] {
+        display:flex; 
+    }   
+
+    [class*="container"] {
+        display: flex; 
         flex: 1 1 50%;
         flex-direction: row;
         flex-wrap: wrap;
@@ -28,17 +124,80 @@
         max-width: 100%;
     }
 
+    .nav{
+
+        &.container{
+            padding:0 0 2.5vh 0; 
+        }
+
+        & .logo{
+            margin: unset;
+            display: flex;
+            flex-direction: row;
+            align-content: flex-start;   
+            flex: 1 1 100%;
+            background-color: rgba(34, 34, 34, 0.050);
+            border-radius: 0px;
+            padding: 2.5vmin 8vmin;
+        
+            & > a.logo{
+              display: inline-flex;
+              flex: 0 0 40px;
+              height: 40px;
+              margin-right: 1.2vmin;
+              background-image: url("/assets/logo.png");
+              background-size: 24px;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-color: $default-dark;
+              border-radius: 50px;
+              padding: 0vmin 0vmin;
+
+            }
+        }
+        
+        &, ul.links{
+            margin: 0;
+
+            
+            &, .li.nav{
+            display: inline-flex;
+            font-weight: 800;
+            color: $default-dark;
+            font-family: $sans-serif-secondary;
+            font-size: calc(8px + 0.25vmin);
+            text-transform: uppercase;
+            letter-spacing: 0.15vw;
+            text-decoration: none;
+            
+                & a {
+                    color: $default-dark;
+                    margin: 0 2vmin 0 2vmin;
+                }
+
+                & > ul.social{
+                    display: none;
+                
+                    & li{
+                        margin: 0 0.5vmin 0 0.5vmin;
+                    } 
+                }
+            }
+        }
+    }
+
 
     .hero{
         
         &.col50 {
-            min-height: 70vh;
+            min-height: 60vh;
             max-width: 100%;
             padding: 0px;
 
             & > .wrapper-hero{
                 padding:0;
                 width: 100%;
+                flex: 1 1 100%;
             
                 &, > .title.mega-title{
                 font-size: calc(24px + 4vmin);
@@ -55,18 +214,12 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            width: 100%;
+            width: 65%;
             height: auto;
         }   
-      }
-
-    .nav{
-
-        &.container{
-            padding: 5vh 8vmin;
-        }
-
     }
+
+  
 
 
   }
